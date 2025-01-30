@@ -15,7 +15,7 @@ def custom_autopct(pct, total):
 df_raw = load_data()
 labels, values = df_raw["분류"], df_raw["누적금액"]
 
-sns.set_theme(context="poster", font="Apple SD Gothic Neo")
+sns.set_theme(context="poster", font="Malgun Gothic")  # 맥OS 사용자는 font에 "Apple SD Gothic Neo" 입력
 fig, ax = plt.subplots(figsize=(16, 9), dpi=100)
 ax.pie(
     values,

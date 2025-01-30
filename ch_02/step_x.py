@@ -9,7 +9,8 @@ from step_3_2 import OUT_3_2
 
 df_raw = pd.read_excel(OUT_3_2)
 
-sns.set_theme(context="poster", style="whitegrid", font="Apple SD Gothic Neo")
+# 시각화 스타일 지정(맥OS 환경에서는 매개변수 font에 "Apple SD Gothic Neo"를 입력)
+sns.set_theme(context="poster", style="whitegrid", font="Malgun Gothic")
 sns.set_style({"grid.linestyle": "--", "grid.color": "#EEEEEE"})  # 그리드 설정
 
 fig, ax = plt.subplots(figsize=(20, 10), dpi=100)
@@ -20,6 +21,5 @@ ticks = ax.get_yticks()  # y축 눈금
 ticks_label = [f"{int(tick):,}" for tick in ticks]  # 눈금 형식 변경
 ax.set_yticks(ticks[:-1], ticks_label[:-1])  # y축 눈금 설정
 ax.set_title("분류별 누적 사용금액")
-
 
 fig.savefig(OUT_DIR / f"{Path(__file__).stem}.png", bbox_inches="tight")
