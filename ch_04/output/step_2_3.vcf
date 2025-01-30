@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+EMAIL;TYPE=WORK:email@example.com
+FN:혼자 만들면서 배우는 파이썬
+N:혼자 만들면서 배우는;파이썬;;;
+ORG:(직장)한빛미디어;(부서)IT1팀
+TEL;TYPE=CELL:+82(10)1234-5678
+TEL;TYPE=WORK:+82(2)1234-5678
+TITLE:(직책)편집자
+URL:https://www.hanbit.co.kr/
+END:VCARD
