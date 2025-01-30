@@ -1,3 +1,3 @@
 [tool.isort]
 profile = "black"
-src_paths = ["ch_01","ch_02","ch_03","ch_04","ch_05","ch_06","ch_07","ch_08","ch_09","ch_10","ch_11","ch_12","ch_13","ch_14","ch_15","ch_16"]
+src_paths = ["ch_01","ch_02","ch_03","ch_04","ch_05","ch_06","ch_07","ch_08","ch_09","ch_10","ch_11","ch_12","ch_13","ch_14","ch_15"]
