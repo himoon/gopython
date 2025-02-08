@@ -12,6 +12,10 @@
         "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.formatOnSave": true
     },
+    "black-formatter.args": [
+        "--line-length",
+        "140"
+    ],
     "files.exclude": {
         "**/__pycache__": true
     },
