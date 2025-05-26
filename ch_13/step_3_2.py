@@ -17,5 +17,5 @@ resp = ollama.chat(
     messages=msgs,
     options=dict(temperature=0.2),  # 온도 옵션 설정
 )
-msg_llm = resp.get("message", {})
+msg_llm = dict(resp.get("message", {}))
 msg_llm
