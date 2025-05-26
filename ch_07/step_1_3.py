@@ -12,7 +12,7 @@ OUT_1_3 = OUT_DIR / f"{Path(__file__).stem}.json"
 def goto_market_cap(page: Page):
     page.goto("https://finance.naver.com")
     page.get_by_role("link", name="국내증시").click()
-    page.get_by_role("link", name="시가총액", exact=True).click()
+    page.get_by_role("link", name="시가총액", exact=True).nth(0).click()
 
 
 def parse_table_kospi(page: Page) -> tuple[list, list]:
