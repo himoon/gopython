@@ -24,3 +24,4 @@ fig.update_traces(
 fig.update_layout(margin=dict(t=0, r=0, b=0, l=0))  # 이미지 여백 지정
 img_path = OUT_DIR / f"{Path(__file__).stem}.png"  # 이미지 경로
 fig.write_image(img_path, width=1600, height=900, scale=2)  # 이미지 파일로 저장
+fig.show()
