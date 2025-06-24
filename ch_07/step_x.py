@@ -23,7 +23,7 @@ def parse_table_etf(page: Page) -> tuple[list, list]:
 
     body = []  # 추출한 데이터 저장용 리스트
     count = tag_tbody.count()  # 행의 개수
-    with tqdm(total=count) as pbar:  # tqdm을 사용하여 진행 상황 표시
+    with tqdm(total=count) as pbar:  # tqdm을 사용하여 진행 상황 표시(책 343 페이지)
         for i in range(count):  # 각 행을 순회
             tag_tr = tag_tbody.nth(i)  # i번째 행 선택
             texts: list = tag_tr.locator("td").all_inner_texts()  # 각 열의 텍스트를 리스트로 가져옴
@@ -37,7 +37,7 @@ def parse_table_etf(page: Page) -> tuple[list, list]:
                 texts[2] = f"{alt_text} {texts[2]}"  # 'alt' 속성값을 '전일비' 열에 반영
             body.append(texts)  # body에 texts 추가
 
-            pbar.update(1)  # 처리 횟수 업데이트(+1)
+            pbar.update()  # 처리 횟수 업데이트(+1)
             pbar.set_description(f"ETF 데이터 수집: {i + 1}/{count}개 행 처리됨")  # 진행 상황 업데이트
     return header, body
 
