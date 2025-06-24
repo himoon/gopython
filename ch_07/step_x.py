@@ -25,6 +25,21 @@ def parse_table_etf(page: Page) -> tuple[list, list]:
     count = tag_tbody.count()  # 행의 개수
     with tqdm(total=count) as pbar:  # tqdm을 사용하여 진행 상황 표시(책 343 페이지)
         for i in range(count):  # 각 행을 순회
+
+            # 💡 미니 프로젝트 디버깅 도움말
+            # 데이터 추출 과정이 어려우시다면 아래 주석을 해제하고 실행해보세요! 각 행별로 데이터를 추출하는 과정을 인스펙터로 확인할 수 있습니다.
+            # page.pause()
+
+            # 인스펙터가 열리면:
+            # 1. F10(다음 단계) 버튼을 눌러 한 줄씩 실행하며 과정을 확인하세요
+            # 2. 인스펙터 하단의 Locator 탭에서 다음 명령어를 입력해 현재 처리 중인 요소를 확인:
+            #    예시: locator("table", has_text="ETF 주요시세정보").locator("tbody > tr").nth(30).locator("td")
+            #         - nth(30)에서 (30) 부분을 현재 i 값으로 변경하여 확인 가능
+            # 3. 크로미움 웹브라우저를 선택한 후 F12를 눌러 개발자 도구로 HTML 구조 확인
+            # 4. 각 단계별로 추출되는 데이터가 올바른지 확인하는 방법:
+            #    - VS Code 터미널에서 Python 변수값들(texts, alt_text 등) 확인
+            #    - print() 문을 추가해서 중간 결과값들을 터미널에 출력
+
             tag_tr = tag_tbody.nth(i)  # i번째 행 선택
             texts: list = tag_tr.locator("td").all_inner_texts()  # 각 열의 텍스트를 리스트로 가져옴
             if not texts:  # <th> 태그의 경우 건너뜀
