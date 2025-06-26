@@ -10,7 +10,7 @@
             "source.organizeImports": "explicit"
         },
         "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.formatOnSave": true
+        "editor.formatOnSave": false
     },
     "black-formatter.args": [
         "--line-length",
