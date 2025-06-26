@@ -35,6 +35,23 @@ def print_dataframe(keywords: str = None):
         df_result = pd.read_csv(OUT_2_4)  # 분석 결과를 데이터프레임으로 변환
         st.dataframe(df_result, use_container_width=True)  # 데이터프레임 출력
 
+        # 💡 st.dataframe() 함수의 기본 설정이 변경되어 책과 같이 천 단위 구분 기호가 자동으로 적용되지 않습니다.
+        # 숫자 데이터에 천 단위 구분 기호나 소수점 형식을 적용하고 싶다면 아래 주석을 참고하세요.
+        # pandas DataFrame 스타일링을 사용하여 데이터 표시 형식을 개선할 수 있습니다.
+        #
+        # 🔧 적용 방법: 아래 주석 처리된 코드의 주석을 해제하고 위의 st.dataframe() 라인을 주석 처리하면 됩니다.
+        #
+        # styler = df_result.style.format(  # 데이터프레임 스타일링
+        #     {
+        #         "검색수M": "{:,}",  # 천 단위 구분 기호를 사용, 소수점 없이 정수로 표시
+        #         "클릭수M": "{:,.1f}",  # 소수점 첫째 자리까지 표시
+        #         "클릭률M": "{:,.2f}%",  # 소수점 둘째 자리까지 표시, '%' 기호 추가
+        #         "상품수": "{:,.0f}",  # 천 단위 구분 기호를 사용, 소수점 없이 정수로 표시
+        #         "경쟁강도": "{:,.4f}",  # 소수점 넷째 자리까지 표시
+        #     },
+        # )
+        # st.dataframe(styler, use_container_width=True)  # 스타일링된 데이터프레임 출력
+
 
 if __name__ == "__main__":
     init_page()  # 웹 앱 기본 설정 및 텍스트 입력 위젯 출력
