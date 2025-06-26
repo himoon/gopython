@@ -17,10 +17,10 @@ def print_dataframe_with_style(keywords: str = None, event: int = None):
             use_container_width=True,  # 너비 최대화
             hide_index=True,  # 데이터프레임 인덱스 숨김
             column_config={  # 열별 스타일 설정
-                "검색수M": ProgressColumn(width="small", max_value=max_values.get("검색수M", 1), format=""),
-                "클릭수M": ProgressColumn(width="small", max_value=max_values.get("클릭수M", 1), format=""),
-                "클릭률M": ProgressColumn(width="small", max_value=max_values.get("클릭률M", 1), format=""),
-                "상품수": ProgressColumn(width="small", max_value=max_values.get("상품수", 1), format=""),
+                "검색수M": ProgressColumn(width="small", max_value=max_values.get("검색수M", 1), format="localized"),  # format 매개변수에 "localized" 전달하여 천 단위 구분 기호 적용
+                "클릭수M": ProgressColumn(width="small", max_value=max_values.get("클릭수M", 1), format="localized"),
+                "클릭률M": ProgressColumn(width="small", max_value=max_values.get("클릭률M", 1), format="localized"),
+                "상품수": ProgressColumn(width="small", max_value=max_values.get("상품수", 1), format="localized"),
                 "경쟁강도": NumberColumn(format="%.2f"),
             },
         )
