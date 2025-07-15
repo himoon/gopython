@@ -50,7 +50,7 @@
 ## 4. VS Code 새로고침
 키보드 `F1` 키를 눌러 명령 팔레트를 열고, 아래 그림과 같이 VS Code를 새로고침합니다.
 
-- 명령 팔레트에서 `reload` 입력 후 `캐시 지우기 및 창 다시 로드` 또는 `개발자: 창 다시 로드` 클릭
+- 명령 팔레트에서 `reload` 입력 후 `Python: 캐시 지우기 및 창 다시 로드` 또는 `개발자: 창 다시 로드` 클릭
 
   <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/venv-07.png" alt="캐시 지우기 및 창 다시 로드 클릭" width="700"/>
 
