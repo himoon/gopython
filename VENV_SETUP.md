@@ -3,16 +3,16 @@
 이 문서는 VS Code에서 파이썬 가상환경을 설정하는 방법을 설명합니다. 가상환경은 프로젝트마다 독립적인 파이썬 환경을 제공하여, 패키지 충돌을 방지하고 의존성 관리를 쉽게 합니다.
 
 
-## 1. 실행 중인 터미널이나 대화형 창 종료
+## 1. 실행 중인 터미널 창 및 대화형 창 종료
 현재 실행 중인 터미널 창이나 대화형 창을 모두 종료합니다.
 
-- 아래 그림과 같이 여러 개의 터미널 창이 열려 있는 경우, 마우스를 오른쪽 터미널 목록에 가져가면 나타나는 휴지통 아이콘을 클릭하여 모두 종료
+- 아래 그림과 같이 여러 개의 터미널 창이 열려 있는 경우, 마우스를 오른쪽 터미널 목록에 가져가면 나타나는 휴지통 아이콘을 클릭하여 모두 종료하세요.
 
   <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/venv-01.png" alt="실행 중인 터미널 종료" width="700"/>
 
 
 ## 2. 터미널 기본 프로필 변경 (윈도우 사용자)
-윈도우 환경인 경우 키보드 `F1` 키를 눌러 명령 팔레트를 열고, 아래 그림과 같이 터미널 기본 프로필을 `Command Prompt`로 변경해야 합니다.
+윈도우 환경인 경우 키보드 `F1` 키를 눌러 명령 팔레트를 열고, 아래 그림과 같이 터미널 기본 프로필을 명령 프롬프트(`Command Prompt`)로 변경하세요. 그래야 가상환경 설정 시 `(.venv)` 접두사가 제대로 표시됩니다.
 
 - 명령 팔레트에서 `default profile` 입력 후 `터미널: 기본 프로필 선택` 클릭
 
@@ -22,7 +22,7 @@
 
   <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/venv-03.png" alt="Command Prompt 클릭" width="700"/>
 
-> ⚠️ macOS 환경에서는 이 단계를 건너뛰어도 됩니다. macOS에서는 기본적으로 `zsh` 또는 `bash`가 사용되므로 별도의 설정이 필요하지 않습니다.
+> ⚠️ macOS 환경에서는 이 단계를 건너뛰어도 됩니다. macOS는 기본적으로 `zsh` 또는 `bash`를 사용하는데, 별다른 설정이 없어도 `(.venv)` 접두사가 잘 표시됩니다.
 
 
 ## 3. 파이썬 가상환경 설치
@@ -55,16 +55,14 @@
   <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/venv-07.png" alt="캐시 지우기 및 창 다시 로드 클릭" width="700"/>
 
 
-## 5. 터미널 재시작 및 활성화 확인
-이제 가상환경이 설치되었으므로, 새로 설치된 가상환경을 사용하기 위해 터미널을 재시작해야 합니다.
+## 5. 파이썬 가상환경 활성화 확인
+새로 설치한 파이썬 가상환경이 잘 활성화되었는지 확인해야 합니다.
 
-- VS Code 상단 메뉴에서 `터미널` 클릭 후 `새 터미널` 선택
+- VS Code 상단 메뉴에서 `터미널` 클릭 후 `새 터미널`을 선택하면, 아래 그림과 같이 `터미널 창`에 `(.venv)` 접두사가 표시됩니다.
 
-  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/venv-08.png" alt="새 터미널 선택" width="700"/>
+- 파이썬 소스 코드를 열고, `대화형 창`에서 실행하면 아래 그림과 같이 우측 상단에 `.venv` 접두사가 표시되고, VS Code 하단 상태 표시줄에서도 `(.venv)` 접두사가 표시됩니다.
 
-- 가상환경이 활성화되면 터미널 프롬프트에 `(.venv)`와 같은 접두사가 출력됩니다.
-
-  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/venv-09.png" alt="가상환경 활성화 확인" width="700"/>
+  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/venv-10.png" alt="대화형 창에서 가상환경 활성화 확인" width="700"/>
 
 > ⚠️ **가상환경이 활성화되지 않은 경우**
 > 1. VS Code를 완전히 종료한 후 다시 시작해 보세요.
