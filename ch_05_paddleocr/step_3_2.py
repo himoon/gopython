@@ -10,7 +10,6 @@ def read_text_translated(path: Path) -> list:
     text_list = read_text(path)  # 5-2절의 문자 인식 함수
 
     DEEPL_KEY = "API_KEY"  # DEEPL API KEY
-    DEEPL_KEY = "dddd7d6f-f59b-46e5-beaa-32964f606f6b:fx"  # 복사한 API 키를 붙여 넣으세요.
     tran = deepl.Translator(DEEPL_KEY)
     result = []
     for coords, text, prob in text_list:
