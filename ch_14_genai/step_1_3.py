@@ -1,8 +1,8 @@
-import google.generativeai as genai
 import streamlit as st
+from google.genai.chats import Chat
 from PIL import ImageFile
 
-from step_1_2 import get_model, upload_image  # 이전에 작성한 모듈을 불러옵니다.
+from step_1_2 import get_chat, upload_image  # 이전에 작성한 모듈을 불러옵니다.
 
 
 def init_session(keys: dict):  # 세션 초기화
@@ -18,10 +18,9 @@ def clear_session(*exclude):  # 세션 삭제
 
 
 def init_page():
-    st.set_page_config(layout="wide")
-    st.title("✨ 만들면서 배우는 멀티모달 AI")
-    model = get_model()  # 생성형 모델 객체 생성
-    chat = model.start_chat()  # 챗 객체 생성
+    st.set_page_config(layout="wide")  # 페이지 레이아웃 설정
+    st.title("✨ 혼자 만들면서 공부하는 멀티모달 AI 챗봇")
+    chat = get_chat()  # 챗 객체 생성
     init_session(dict(chat=chat, msgs=[]))  # 세션 초기화
 
 
@@ -32,8 +31,8 @@ def show_messages():  # 메시지 기록 출력
 
 
 def send_image(img: ImageFile):  # 이미지 전송
-    chat: genai.ChatSession = st.session_state["chat"]
-    if not chat.history:
+    chat: Chat = st.session_state["chat"]  # 챗 객체 가져오기
+    if not chat.get_history():  # 대화 기록이 없으면 초기 메시지 전송
         with st.spinner("이미지를 분석하는 중입니다..."):
             chat.send_message([img, "이미지를 분석하고, 내 질문에 대답해줘."])
 
@@ -46,7 +45,7 @@ def send_user_input():  # 사용자 메시지 전송
             msgs.append(dict(role="user", content=prompt))
         with st.chat_message("✨"):  # LLM 메시지 출력
             with st.spinner("대화를 생성하는 중입니다..."):
-                chat: genai.ChatSession = st.session_state["chat"]
+                chat: Chat = st.session_state["chat"]  # 챗 객체 가져오기
                 resp = chat.send_message(prompt)
                 st.markdown(resp.text)
                 msgs.append(dict(role="✨", content=resp.text))

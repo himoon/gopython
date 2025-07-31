@@ -1,17 +1,25 @@
 from pathlib import Path
 
-import google.generativeai as genai
 import streamlit as st
+from google import genai
+from google.genai import types
+from google.genai.chats import Chat
 from PIL import Image, ImageFile
 
 from step_1_1 import OUT_DIR  # 이전에 작성한 모듈을 불러옵니다.
 
 
-def get_model(sys_prompt: str = None) -> genai.GenerativeModel:
-    GEMINI_KEY = "AIzaSyB9dCdlt1AG3la0W_pyCwyyq9RppKqv6nE"  # Gemini API 키 입력
-    GEMINI_MODEL = "gemini-1.5-flash"  # Gemini 모델 입력
-    genai.configure(api_key=GEMINI_KEY, transport="rest")  # API 키 설정
-    return genai.GenerativeModel(GEMINI_MODEL, system_instruction=sys_prompt)
+def get_client() -> genai.client.Client:
+    GEMINI_KEY = "API_KEY"  # Gemini API 키 입력
+    return genai.Client(api_key=GEMINI_KEY)  # 클라이언트 객체 생성
+
+
+def get_chat(sys_prompt: str | None = None) -> Chat:
+    client = get_client()
+    return client.chats.create(
+        model="gemini-2.5-flash",  # Gemini 모델 입력
+        config=types.GenerateContentConfig(system_instruction=sys_prompt),
+    )  # 챗 객체 생성
 
 
 def upload_image(on_change=None, args=None) -> ImageFile.ImageFile | None:
@@ -33,14 +41,13 @@ def upload_image(on_change=None, args=None) -> ImageFile.ImageFile | None:
 
 if __name__ == "__main__":
     st.set_page_config(layout="wide")
-    st.title("✨ 만들면서 배우는 멀티모달 AI")
+    st.title("✨ 혼자 만들면서 공부하는 멀티모달 AI 챗봇")
     if img := upload_image():  # 이미지 등록
         prompt = "공연은 어디에서 몇 시에 시작해? 한글로 대답해 줘"  # 이미지에 대한 질문
         with st.chat_message("user"):  # 사용자 메시지 출력
             st.markdown(prompt)
         with st.chat_message("✨"):  # LLM 매시지 출력
             with st.spinner("대화를 생성하는 중입니다..."):
-                model = get_model()  # 생성형 모델 객체 생성
-                chat = model.start_chat()  # 챗 객체 생성
+                chat = get_chat()  # 챗 객체 생성
                 resp = chat.send_message([img, prompt])  # 이미지 및 텍스트 전송
                 st.markdown(resp.text)
