@@ -12,7 +12,7 @@ from step_3_1 import generate_quiz
 
 def init_page():
     st.set_page_config(layout="wide")
-    st.title("🔊 혼자 만들면서 공부하는 영어 받아쓰기 웹 앱")
+    st.title("🔊 만들면서 배우는 영어 받아쓰기 웹 앱")
     init_session(dict(quiz=[], answ=[], audio=[], voice="en-US-Journey-F"))
 
 

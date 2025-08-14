@@ -9,13 +9,9 @@ from PIL import Image, ImageFile
 from step_1_1 import OUT_DIR  # 이전에 작성한 모듈을 불러옵니다.
 
 
-def get_client() -> genai.client.Client:
-    GEMINI_KEY = "API_KEY"  # Gemini API 키 입력
-    return genai.Client(api_key=GEMINI_KEY)  # 클라이언트 객체 생성
-
-
 def get_chat(sys_prompt: str | None = None) -> Chat:
-    client = get_client()
+    GEMINI_KEY = "API_KEY"  # Gemini API 키 입력
+    client = genai.Client(api_key=GEMINI_KEY)  # 클라이언트 객체 생성
     return client.chats.create(
         model="gemini-2.5-flash",  # Gemini 모델 입력
         config=types.GenerateContentConfig(system_instruction=sys_prompt),
@@ -41,7 +37,7 @@ def upload_image(on_change=None, args=None) -> ImageFile.ImageFile | None:
 
 if __name__ == "__main__":
     st.set_page_config(layout="wide")
-    st.title("✨ 혼자 만들면서 공부하는 멀티모달 AI 챗봇")
+    st.title("✨ 만들면서 배우는 멀티모달 AI")
     if img := upload_image():  # 이미지 등록
         prompt = "공연은 어디에서 몇 시에 시작해? 한글로 대답해 줘"  # 이미지에 대한 질문
         with st.chat_message("user"):  # 사용자 메시지 출력

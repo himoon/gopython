@@ -19,7 +19,7 @@ def clear_session(*exclude):  # 세션 삭제
 
 def init_page():
     st.set_page_config(layout="wide")  # 페이지 레이아웃 설정
-    st.title("✨ 혼자 만들면서 공부하는 멀티모달 AI 챗봇")
+    st.title("✨ 만들면서 배우는 멀티모달 AI")
     chat = get_chat()  # 챗 객체 생성
     init_session(dict(chat=chat, msgs=[]))  # 세션 초기화
 
@@ -32,7 +32,7 @@ def show_messages():  # 메시지 기록 출력
 
 def send_image(img: ImageFile):  # 이미지 전송
     chat: Chat = st.session_state["chat"]  # 챗 객체 가져오기
-    if not chat.get_history():  # 대화 기록이 없으면 초기 메시지 전송
+    if not chat.get_history():  # 대화 기록이 없으면 첫 번째 메시지 전송
         with st.spinner("이미지를 분석하는 중입니다..."):
             chat.send_message([img, "이미지를 분석하고, 내 질문에 대답해줘."])
 
