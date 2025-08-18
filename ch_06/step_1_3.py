@@ -4,8 +4,6 @@ from step_1_2 import run_playwright  # 이전에 작성한 모듈을 불러옵�
 
 
 def goto_best_goods(page: Page):
-    page.goto("https://shopping.naver.com/ns/home")  # 페이지 이동
-
     # 인스펙터 창에서 복사한 코드 붙여넣기
     page.get_by_role("link", name="베스트 NONE").click()
     page.get_by_role("link", name="베스트상품").click()
