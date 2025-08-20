@@ -4,8 +4,6 @@
 
 ## 📢 공지사항
 
-- [**온라인 소스 코드 - 필요한 코드를 쉽게 복사해서 실습하세요!**](https://github.com/himoon/gopython)
-
 - [**유튜브 채널 - 동영상 강의를 통해 더 깊이 있는 학습을 해보세요!**](https://www.youtube.com/@moon-hyunil)
 
 ## 🚀 판매처
