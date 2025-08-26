@@ -28,7 +28,7 @@ ch_07/
 실습을 진행하기 위해 비주얼 스튜디오 코드 터미널에 아래 명령어를 입력하여 파이썬 패키지를 설치하세요.
 
 ```shell
-pip install -U playwright kaleido nbformat pandas plotly tqdm
+pip install -U playwright "kaleido<1" nbformat pandas "plotly<6" tqdm
 ```
 
 > **📝 참고**: `tqdm` 패키지는 미니 프로젝트에서 데이터 처리 진행 상태를 표시하기 위한 패키지입니다. 이 패키지에 대한 자세한 내용은 책 343 페이지를 참고하세요.
@@ -39,7 +39,14 @@ pip install -U playwright kaleido nbformat pandas plotly tqdm
 playwright install
 ```
 
-## ⚠️ 중요 변화 사항 - Playwright Inspector Target 설정
+## 🔥 중요 코드 업데이트 및 변화 사항
+
+### 📦 패키지 버전 관리
+**원활한 실습을 위해서 plotly 버전은 5.24.1 버전을, kaleido 버전은 0.2.1 버전을 사용해주세요.**
+
+`pip install -U` 시 `"plotly<6"`과 `"kaleido<1"`을 입력하여 설치해주세요.
+
+### ⚠️ Playwright Inspector Target 설정
 
 Playwright Inspector를 사용할 때 **중요한 설정 변경이 필요**합니다:
 
