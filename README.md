@@ -38,6 +38,13 @@
 - **⚠️ 반드시 삭제해야 할 폴더**: OneDrive, Google Drive, iCloud Drive 등 클라우드 폴더
   > 클라우드 폴더는 수천 개의 하위 폴더를 포함하여 실습 시간이 매우 길어집니다
 
+### Chapter 4: QR 코드로 연락처 공유
+- **패키지 업데이트**: qrcode 패키지 최신 버전에서 에러 발생
+- **에러 내용**: `ValueError: Error correction level must be ERROR_CORRECT_H if an embedded image is provided`
+- **해결책**: 
+  - **책 내용 그대로**: `pip install "pillow==10.4.0" "qrcode==7.4.2" vobject` (버전 고정)
+  - **최신 버전 사용**: [step_3_1_new.py](ch_04/step_3_1_new.py) 파일 참고 또는 [유튜브 강의](https://www.youtube.com/watch?v=IpgPhZh4kXE&list=PLID7cC3lN2TF4D1uUL3gYoK6VE7WlorbQ&index=31&t=376s) 참고
+
 ### Chapter 5: 이미지 속 텍스트 번역하기
 - **환경 문제**: EasyOCR 패키지가 일부 CPU에서 오류 없이 종료되는 현상 발생
 - **해결책**: PaddleOCR을 사용한 대체 코드 제공 (`ch_05_paddleocr/` 폴더)
