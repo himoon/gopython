@@ -1,4 +1,4 @@
-# 혼자 만들면서 공부하는 파이썬
+# <혼자 만들면서 공부하는 파이썬> 책의 깃허브 자료실
 
 <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/cover_1st.png" width="150" alt="혼자 만들면서 공부하는 파이썬 표지">
 
