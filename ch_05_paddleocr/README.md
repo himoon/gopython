@@ -9,9 +9,31 @@
 
 > [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)은 중국의 Baidu에서 개발한 OCR 패키지로, EasyOCR과 유사한 기능을 제공합니다. 또한, 다양한 언어를 지원하며, 설치가 간편합니다.
 
+## 📋 실습 개요
+이번 장에서는 **OCR(Optical Character Recognition)** 기술을 활용하여 이미지 속 텍스트를 인식하고 번역하는 프로젝트를 진행합니다. 
+- **PaddleOCR**로 이미지에서 텍스트 추출
+- **DeepL API**를 이용한 자동 번역
+- **PIL**로 인식된 텍스트 위치 시각화
+- **Streamlit**으로 웹 애플리케이션 제작
+
 ## ⚙️ PaddleOCR 관련 패키지 설치
 실습을 진행하기 위해 비주얼 스튜디오 코드 터미널에 아래 명령어를 입력하여 파이썬 패키지를 설치하세요.
 
 ```shell
 pip install -U paddlepaddle paddleocr pillow deepl streamlit ipywidgets setuptools
 ```
+
+## 🚀 실습 순서
+
+*   **[step_1.py](step_1.py)**: 실습에 필요한 `input`, `output` 폴더를 생성하여 기본 작업 환경을 설정합니다.
+*   **[step_2_1.py](step_2_1.py)**: `paddleocr` 라이브러리를 사용하여 이미지(`ocr.jpg`)에서 텍스트를 인식하고, 인식된 텍스트 결과를 출력하는 기본 예제입니다.
+*   **[step_2_2.py](step_2_2.py)**: PaddleOCR 로직을 재사용 가능한 `read_text` 함수로 만듭니다. 특히 `easyocr`과 동일한 형식의 결과((좌표, 텍스트, 신뢰도))를 반환하도록 구조화합니다.
+*   **[step_2_3_poly.py](step_2_3_poly.py)**: `Pillow`의 `draw.polygon` 함수를 사용하여 두꺼운 외곽선을 가진 사각형을 그리는 방법을 보여주는 간단한 예제입니다.
+*   **[step_2_3.py](step_2_3.py)**: OCR로 텍스트를 인식한 후, 원본 이미지 위에 인식된 텍스트 영역을 사각형(bounding box)으로 그립니다. 신뢰도(prob)에 따라 사각형의 색상을 다르게 표시하여 시각화합니다.
+*   **[step_2_4_widgets.py](step_2_4_widgets.py)**: `streamlit`의 주요 위젯인 버튼(`st.button`), 텍스트 입력창(`st.text_input`), 파일 업로더(`st.file_uploader`)의 기본적인 사용법을 보여주는 예제입니다.
+*   **[step_2_4.py](step_2_4.py)**: `streamlit`을 사용하여 사용자가 이미지를 업로드하면 OCR을 수행하고, 원본 이미지와 텍스트 영역이 표시된 결과 이미지를 나란히 보여주는 간단한 웹 앱을 만듭니다.
+*   **[step_3_1.py](step_3_1.py)**: `deepl` 라이브러리를 사용하여 "Hello, World!" 문장을 한국어로 번역하는 기본적인 API 사용법을 보여줍니다.
+*   **[step_3_2.py](step_3_2.py)**: OCR 기능과 번역 기능을 통합합니다. 이미지에서 `read_text`로 텍스트를 인식한 후, `deepl` API를 호출하여 각 텍스트 조각을 한국어로 번역합니다.
+*   **[step_3_3.py](step_3_3.py)**: 번역된 텍스트를 이미지 위에 시각화합니다. OCR로 인식된 영역을 반투명한 배경으로 채우고, 그 위에 번역된 텍스트를 덮어써서 보여줍니다.
+*   **[step_3_4.py](step_3_4.py)**: 이미지 업로드, OCR, 번역, 결과 시각화 기능을 모두 결합한 최종 `streamlit` 웹 애플리케이션을 완성합니다.
+*   **[step_x.py](step_x.py)**: 텍스트 시각화 방법을 개선한 고급 예제입니다. 인식된 텍스트의 크기를 정확히 계산하여 텍스트 바로 뒤에만 반투명 배경을 추가하고 테두리를 그려, 원본 이미지를 덜 가리면서도 가독성을 높입니다.
