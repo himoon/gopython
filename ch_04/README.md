@@ -32,7 +32,7 @@ ValueError: Error correction level must be ERROR_CORRECT_H if an embedded image 
 | 📋 구분 | 📝 설명 | 🔗 링크 |
 |:---:|:---|:---:|
 | **코드 파일** | 최신 버전에 맞게 수정된 실습 코드 | [step_3_1_new.py](step_3_1_new.py) |
-| **동영상 강의** | 최신 버전 `qrcode` 실습 가이드 | [강의 보러가기](https://www.youtube.com/watch?v=IpgPhZh4kXE&list=PLID7cC3lN2TF4D1uUL3gYoK6VE7WlorbQ&index=31&t=376s) |
+| **동영상 강의** | 최신 버전 `qrcode` 실습 가이드 | [강의 보러가기](https://www.youtube.com/watch?v=IpgPhZh4kXE&list=PLID7cC3lN2TF4D1uUL3gYoK6VEWlorbQ&index=31&t=376s) |
 
 > 💡 **vobject 패키지**는 '좀 더 알아보기' 코너에서 VCF 파일을 편리하게 만드는 용도로 사용합니다. 자세한 내용은 책을 참고하세요.
 
@@ -43,15 +43,15 @@ ValueError: Error correction level must be ERROR_CORRECT_H if an embedded image 
 
 
 ## 🚀 실습 순서
-1.  [step_1_1.py](step_1_1.py): 실습에 필요한 `input`, `output` 폴더를 생성하여 기본 작업 환경을 설정합니다.
-2.  [step_1_2.py](step_1_2.py): "헬로, QR 코드!" 텍스트로 간단한 QR 코드를 생성하고 화면에 표시합니다.
-3.  [step_1_3.py](step_1_3.py): YouTube URL이 담긴 QR 코드를 생성하고 화면에 표시합니다.
-4.  [step_1_4.py](step_1_4.py): 텍스트와 URL로 각각 QR 코드를 생성한 후, `output` 폴더에 PNG 파일로 저장합니다.
-5.  [step_2_1.py](step_2_1.py): vCard(연락처) 형식의 문자열을 만들고, 이를 `.vcf` 파일로 저장한 뒤 QR 코드로 생성하여 화면에 표시합니다.
-6.  [step_2_2.py](step_2_2.py): vCard(연락처) 데이터를 `.vcf` 파일과 QR 코드 `.png` 파일로 각각 `output` 폴더에 저장합니다.
-7.  [step_2_3.py](step_2_3.py): `vobject` 패키지를 사용하여 이름, 여러 전화번호, 이메일 등 상세 정보가 포함된 vCard를 생성하고, `.vcf` 파일과 `.png` QR 코드 파일로 저장합니다.
-8.  [step_3_1.py](step_3_1.py): `qrcode` 패키지의 `StyledPilImage`를 사용하여 QR 코드 중앙에 `phone.png` 이미지를 삽입합니다.
-9.  [step_3_2.py](step_3_2.py): Pillow(`PIL`) 패키지를 사용하여, 이미 생성된 QR 코드 이미지의 우측 하단에 아이콘을 직접 붙여넣는 방식으로 이미지를 합성합니다.
-10. [step_x.py](step_x.py): Pillow(`PIL`)를 이용해 QR 코드와 고양이 이미지를 좌우로 배치하여 새로운 배경 위에 합성하고, 최종 결과물을 파일로 저장합니다.
 
-> 💡 **참고**: 최신 `qrcode` 패키지(8.0 이상)를 사용한다면 8번 과정(`step_3_1.py`) 대신 [step_3_1_new.py](step_3_1_new.py) 파일을 사용하세요. 이 파일은 최신 버전에 맞게 높은 오류 복원 수준(`ERROR_CORRECT_H`)을 명시적으로 설정하여 이미지를 삽입합니다.
+*   **[step_1_1.py](step_1_1.py)**: 실습에 필요한 `input`, `output` 폴더를 생성하여 기본 작업 환경을 설정합니다.
+*   **[step_1_2.py](step_1_2.py)**: `qrcode` 라이브러리를 사용하여 "헬로, QR 코드!"라는 텍스트가 포함된 간단한 QR 코드를 생성하고 표시합니다.
+*   **[step_1_3.py](step_1_3.py)**: 유튜브 URL 주소를 담은 QR 코드를 생성하고 표시합니다.
+*   **[step_1_4.py](step_1_4.py)**: 텍스트와 URL로 각각 QR 코드를 생성한 후, `output` 폴더에 별도의 PNG 이미지 파일로 저장합니다.
+*   **[step_2_1.py](step_2_1.py)**: vCard(연락처) 형식의 문자열을 직접 구성하여 `.vcf` 파일로 저장하고, 동일한 문자열로 QR 코드를 생성합니다.
+*   **[step_2_2.py](step_2_2.py)**: vCard 연락처 정보를 `.vcf` 파일과 QR 코드 `.png` 파일로 각각 `output` 폴더에 저장하는 스크립트를 작성합니다.
+*   **[step_2_3.py](step_2_3.py)**: `vobject` 라이브러리를 사용하여 이름, 여러 개의 전화번호, 이메일 등 복잡한 정보를 포함한 vCard 객체를 생성하고, 이를 `.vcf` 파일과 QR 코드 이미지로 저장합니다.
+*   **[step_3_1.py](step_3_1.py)**: `qrcode` 라이브러리의 `StyledPilImage` 기능을 사용하여 QR 코드 중앙에 이미지를 삽입합니다. (구버전 `qrcode` 용)
+*   **[step_3_1_new.py](step_3_1_new.py)**: 최신 `qrcode` 라이브러리(8.0 이상)에서 중앙에 이미지를 삽입하기 위해, 높은 오류 복원 수준(`ERROR_CORRECT_H`)을 명시적으로 설정하는 방법을 보여줍니다.
+*   **[step_3_2.py](step_3_2.py)**: `Pillow` 라이브러리를 사용하여, 이미 생성된 QR 코드 이미지의 우측 하단에 아이콘 이미지를 직접 붙여넣는 방식으로 이미지를 합성합니다.
+*   **[step_x.py](step_x.py)**: `Pillow`을 이용해 QR 코드와 고양이 이미지를 새로운 흰색 배경 위에 좌우로 나란히 배치하여, 하나의 합성된 이미지로 만들고 파일로 저장합니다.
