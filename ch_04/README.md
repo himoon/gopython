@@ -1,7 +1,11 @@
 # Chapter 04 QR 코드로 연락처 공유
 
 ## 📋 실습 개요
-이번 장에서는 Python을 사용하여 vCard 연락처 정보가 담긴 QR 코드를 생성하는 방법을 배웁니다. `qrcode`와 `Pillow` 패키지를 활용하여 이미지가 포함된 QR 코드를 만드는 과정을 실습합니다.
+이번 장에서는 **QR 코드 생성과 이미지 처리**를 통해 연락처 정보를 손쉽게 공유할 수 있는 시스템을 구현합니다.
+- **qrcode**를 활용한 다양한 형태의 QR 코드 생성
+- **vCard 형식**을 통한 표준 연락처 정보 구조화
+- **Pillow(PIL)**를 사용한 이미지 합성 및 처리
+- **vobject**로 복잡한 연락처 데이터 생성 및 관리
 
 ## ⚙️ 패키지 설치
 실습에 필요한 패키지를 비주얼 스튜디오 코드 터미널에 아래 명령어를 입력하여 설치하세요.
@@ -42,16 +46,28 @@ ValueError: Error correction level must be ERROR_CORRECT_H if an embedded image 
 <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/ch_04/output/step_x.png" width="300">
 
 
-## 🚀 실습 순서
+## 🚀 실습 단계별 가이드
 
-*   **[step_1_1.py](step_1_1.py)**: 실습에 필요한 `input`, `output` 폴더를 생성하여 기본 작업 환경을 설정합니다.
-*   **[step_1_2.py](step_1_2.py)**: `qrcode` 라이브러리를 사용하여 "헬로, QR 코드!"라는 텍스트가 포함된 간단한 QR 코드를 생성하고 표시합니다.
-*   **[step_1_3.py](step_1_3.py)**: 유튜브 URL 주소를 담은 QR 코드를 생성하고 표시합니다.
-*   **[step_1_4.py](step_1_4.py)**: 텍스트와 URL로 각각 QR 코드를 생성한 후, `output` 폴더에 별도의 PNG 이미지 파일로 저장합니다.
-*   **[step_2_1.py](step_2_1.py)**: vCard(연락처) 형식의 문자열을 직접 구성하여 `.vcf` 파일로 저장하고, 동일한 문자열로 QR 코드를 생성합니다.
-*   **[step_2_2.py](step_2_2.py)**: vCard 연락처 정보를 `.vcf` 파일과 QR 코드 `.png` 파일로 각각 `output` 폴더에 저장하는 스크립트를 작성합니다.
+*   **[step_1_1.py](step_1_1.py)**: 실습에 필요한 `input`, `output` 폴더를 생성하여 기본 작업 환경을 구성합니다.
+
+*   **[step_1_2.py](step_1_2.py)**: `qrcode` 라이브러리를 사용하여 "헬로, QR 코드!"라는 텍스트가 포함된 간단한 QR 코드를 생성하고 표시하는 기본 예제입니다.
+
+*   **[step_1_3.py](step_1_3.py)**: 유튜브 URL 주소를 담은 QR 코드를 생성하고 표시하여 웹 링크를 QR 코드로 변환하는 방법을 학습합니다.
+
+*   **[step_1_4.py](step_1_4.py)**: 텍스트와 URL로 각각 QR 코드를 생성한 후, `output` 폴더에 별도의 PNG 이미지 파일로 체계적으로 저장합니다.
+
+*   **[step_2_1.py](step_2_1.py)**: vCard(연락처) 형식의 문자열을 직접 구성하여 `.vcf` 파일로 저장하고, 동일한 문자열로 연락처 정보가 담긴 QR 코드를 생성합니다.
+
+*   **[step_2_2.py](step_2_2.py)**: vCard 연락처 정보를 `.vcf` 파일과 QR 코드 `.png` 파일로 각각 `output` 폴더에 저장하는 완전한 스크립트를 작성합니다.
+
 *   **[step_2_3.py](step_2_3.py)**: `vobject` 라이브러리를 사용하여 이름, 여러 개의 전화번호, 이메일 등 복잡한 정보를 포함한 vCard 객체를 생성하고, 이를 `.vcf` 파일과 QR 코드 이미지로 저장합니다.
-*   **[step_3_1.py](step_3_1.py)**: `qrcode` 라이브러리의 `StyledPilImage` 기능을 사용하여 QR 코드 중앙에 이미지를 삽입합니다. (구버전 `qrcode` 용)
-*   **[step_3_1_new.py](step_3_1_new.py)**: 최신 `qrcode` 라이브러리(8.0 이상)에서 중앙에 이미지를 삽입하기 위해, 높은 오류 복원 수준(`ERROR_CORRECT_H`)을 명시적으로 설정하는 방법을 보여줍니다.
+
+*   **[step_3_1.py](step_3_1.py)**: `qrcode` 라이브러리의 `StyledPilImage` 기능을 사용하여 QR 코드 중앙에 이미지를 삽입하는 방법을 구현합니다. (구버전 `qrcode` 용)
+
+*   **[step_3_1_new.py](step_3_1_new.py)**: 최신 `qrcode` 라이브러리(8.0 이상)에서 중앙에 이미지를 삽입하기 위해, 높은 오류 복원 수준(`ERROR_CORRECT_H`)을 명시적으로 설정하는 방법을 학습합니다.
+
 *   **[step_3_2.py](step_3_2.py)**: `Pillow` 라이브러리를 사용하여, 이미 생성된 QR 코드 이미지의 우측 하단에 아이콘 이미지를 직접 붙여넣는 방식으로 이미지를 합성합니다.
-*   **[step_x.py](step_x.py)**: `Pillow`을 이용해 QR 코드와 고양이 이미지를 새로운 흰색 배경 위에 좌우로 나란히 배치하여, 하나의 합성된 이미지로 만들고 파일로 저장합니다.
+
+*   **[step_x.py](step_x.py)**: `Pillow`을 이용해 QR 코드와 고양이 이미지를 새로운 흰색 배경 위에 좌우로 나란히 배치하여, 하나의 합성된 이미지로 만들고 파일로 저장하는 최종 프로젝트입니다.
+
+모든 준비가 완료되었다면 QR 코드 연락처 공유 실습을 시작해보세요! 🚀
