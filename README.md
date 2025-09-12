@@ -93,6 +93,7 @@
    - **기본**: Python 3.12.x 또는 3.13.x 버전
    - **Chapter 5 (EasyOCR)**: Python 3.12.x 필수
    - **Chapter 5 (PaddleOCR)**: Python 3.12.x 또는 3.13.x 모두 지원
+   - **Python 3.12.x 설치 방법**: [ch_05/README.md](ch_05/README.md) 파일의 "🔽 파이썬 3.12.x 설치 가이드" 섹션 참고
 2. **패키지 설치**: 각 챕터의 `README.md` 파일에서 설치 명령어 확인
 3. **업데이트된 코드**: 변경사항이 있는 챕터는 새로운 폴더의 코드 사용 필수
 
