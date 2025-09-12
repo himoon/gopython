@@ -19,7 +19,7 @@ pip install -U datakart matplotlib openpyxl pandas requests seaborn
 1. [한국은행 경제통계시스템(ECOS)](https://ecos.bok.or.kr/) 접속
 2. 회원가입 후 로그인
 3. 'API 이용신청' 메뉴에서 인증키 발급
-4. 발급받은 API 키를 해당 실습 파일의 `API_KEY` 변수에 입력하세요
+4. 발급받은 API 키를 해당 실습 파일의 `ECOS_KEY` 변수에 입력하세요
 
 ## 🚀 실습 단계별 가이드
 
