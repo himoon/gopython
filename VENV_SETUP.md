@@ -22,6 +22,8 @@
 
   <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/venv-03.png" alt="Command Prompt 클릭" width="700"/>
 
+- 터미널 기본 프로필을 변경한 후, 열린 터미널 창이 있다면 모두 종료하고, VS Code를 완전히 종료한 후 다시 시작하세요.
+
 > ⚠️ macOS 환경에서는 이 단계를 건너뛰어도 됩니다. macOS는 기본적으로 `zsh` 또는 `bash`를 사용하는데, 별다른 설정이 없어도 `(.venv)` 접두사가 잘 표시됩니다.
 
 
