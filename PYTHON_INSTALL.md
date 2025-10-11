@@ -1,5 +1,7 @@
 # VS Code 업데이트로 인한 대화형 창 커널 연결 문제 해결
 
+<img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/cover_1st.png" width="150" alt="혼자 만들면서 공부하는 파이썬 표지">
+
 최근 VS Code 업데이트로 인해 대화형 창이 Python 커널에 연결되지 않는 문제가 발생할 수 있습니다. 이는 주로 **VS Code가 관리자 권한으로 설치된 Python 경로에 접근하지 못해서** 발생하는 권한 문제입니다.
 
 > ⚠️ **적용 대상**: 이 문서는 윈도우 환경에서만 해당됩니다. macOS나 리눅스 환경에서는 이 단계를 건너뛰어도 됩니다.
@@ -72,3 +74,4 @@
 - 저자의 이메일로 문의
 - 오픈 채팅에 문의
 - 문제 상황의 스크린샷과 함께 구체적인 오류 메시지를 포함해 주세요
+
