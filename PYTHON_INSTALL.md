@@ -19,7 +19,7 @@
 - 최근 VS Code 업데이트로 인해 윈도우 환경에서 아래 그림과 같이 "커널에 연결:.venv (3.x.x)"이라는 팝업 메시지가 표시된 후 대화형 창이 Python 커널에 연결되지 않는 문제가 발생할 수 있습니다.
 - 이는 **VS Code가 관리자 권한으로 설치된 Python의 경로에 접근하지 못해서** 발생합니다.
     
-  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/win_install_0.png" alt="커널 연결 문제 발생" width="600"/>
+  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/win_install_1.png" alt="커널 연결 문제 발생" width="600"/>
 
 ### 🚨 핵심 원인
 - **관리자 권한으로 설치된 Python**: 시스템 디렉토리(`C:\Program Files\Python3x\`)에 설치되어 VS Code가 접근 권한 문제로 인해 정상적으로 사용할 수 없음
@@ -32,20 +32,20 @@
 - "Python" 검색 후 모든 Python 관련 항목 삭제
 - **특히 관리자 권한으로 설치된 Python을 완전히 제거**
     
-  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/win_install_1.png" alt="설치된 파이썬 삭제" width="600"/>
+  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/win_install_2.png" alt="설치된 파이썬 삭제" width="600"/>
 
 ## 3. 파이썬 최신 버전 다운로드 및 설치
 [파이썬 공식 웹사이트](https://www.python.org/)에서 파이썬 설치파일을 다운로드하고 설치합니다.
 - **"Add python.exe to PATH"** 옵션을 반드시 체크
 - **"Customize installation"** 클릭
 
-  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/win_install_2.png" alt="파이썬 설치 1단계" width="600"/>
+  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/win_install_3.png" alt="파이썬 설치 1단계" width="600"/>
 
 ## 4. 설치 옵션 선택
 "Optional Features" 화면에서 기본 옵션을 그대로 두고 "Next"를 클릭합니다.
 - 🚨 **"for all users" 옵션을 반드시 체크 해제**해야 합니다.
 
-  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/win_install_3.png" alt="파이썬 설치 2단계" width="600"/>
+  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/win_install_4.png" alt="파이썬 설치 2단계" width="600"/>
 
 > 💡 이 옵션이 체크되어 있으면 다시 관리자 권한으로 설치되어 같은 문제가 재발합니다.
 
@@ -54,7 +54,7 @@
 - 🚨 **"Install Python 3.x for all users"** 옵션을 반드시 체크 해제 (가장 중요!)
 - 나머지 옵션은 기본값으로 유지하고, **"Install"** 클릭하여 설치 진행  
 
-  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/win_install_4.png" alt="파이썬 설치 3단계" width="600"/>
+  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/win_install_5.png" alt="파이썬 설치 3단계" width="600"/>
 
 > 💡 "for all users" 옵션이 체크되면 Python이 `C:\Program Files\`에 설치되어 VS Code가 접근할 수 없습니다. 체크 해제하면 `C:\Users\사용자명\AppData\Local\Programs\Python\`에 설치되어 VS Code가 정상적으로 접근할 수 있습니다.
 
@@ -64,7 +64,7 @@
 - 실행할 코드를 선택한 후 `Shift + Enter` 키를 눌러 대화형 창에서 실행
 - 아래와 같이 ipykernel 패키지가 필요하다는 메시지가 나타나면 **"설치"** 버튼을 클릭하여 설치를 진행합니다.
 
-  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/win_install_5.png" alt="ipykernel 패키지 설치 안내" width="600"/>
+  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/win_install_6.png" alt="ipykernel 패키지 설치 안내" width="600"/>
 
 > 💡 ipykernel은 Jupyter 노트북과 VS Code 대화형 창을 연결하는 데 필요한 핵심 패키지입니다.
 
