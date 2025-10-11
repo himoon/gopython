@@ -1,5 +1,7 @@
 # VS Code 파이썬 가상환경 설정 
 
+<img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/cover_1st.png" width="150" alt="혼자 만들면서 공부하는 파이썬 표지">
+
 이 문서는 VS Code에서 파이썬 가상환경을 설정하는 방법을 설명합니다. 가상환경은 프로젝트마다 독립적인 파이썬 환경을 제공하여, 패키지 충돌을 방지하고 의존성 관리를 쉽게 합니다.
 
 
