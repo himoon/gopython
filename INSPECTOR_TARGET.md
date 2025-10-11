@@ -1,5 +1,7 @@
 # Playwright Inspector Target 설정 가이드
 
+<img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/cover_1st.png" width="150" alt="혼자 만들면서 공부하는 파이썬 표지">
+
 Playwright Inspector를 파이썬 환경에서 사용할 때 발생하는 Target 설정 문제와 해결방법을 설명합니다.
 
 ## 문제 상황
