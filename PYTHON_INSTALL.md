@@ -34,6 +34,8 @@
     
   <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/win_install_2.png" alt="설치된 파이썬 삭제" width="600"/>
 
+> 💡 화면에 보이는 "Python 3.x.x" 프로그램과 "Python Launcher" 프로그램을 모두 삭제해 주세요.
+
 ## 3. 파이썬 최신 버전 다운로드 및 설치
 [파이썬 공식 웹사이트](https://www.python.org/)에서 파이썬 설치파일을 다운로드하고 설치합니다.
 - **"Add python.exe to PATH"** 옵션을 반드시 체크
