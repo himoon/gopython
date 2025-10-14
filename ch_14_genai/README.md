@@ -8,9 +8,14 @@
 - **Streamlit**으로 사용자 친화적인 학습 인터페이스 구현
 
 ## ⚠️ 중요한 변화: 새로운 패키지로 업그레이드!
-최근 Google에서 Gemini API 패키지명을 변경했습니다:
+
+1. 최근 Google에서 Gemini API 패키지명을 변경했습니다:
 - **구버전**: `google-generativeai` 
 - **최신버전**: `google-genai` 
+
+2. 최신 Gemini 모델의 응답이 기존과 달라 다음 두 가지 시스템 프롬프트를 변경하였습니다. 주요 내용은 각 문장별로 개행문자(\n)를 추가하도록 하였습니다.
+- [p1_desc.txt](./input/p1_desc.txt)
+- [p2_desc.txt](./input/p2_desc.txt)
 
 이 폴더(`ch_14_genai`)의 코드들은 모두 **최신 패키지**를 사용합니다. 구버전과의 차이점을 학습하려면 [ch_14](../ch_14/) 폴더의 코드와 비교해보세요.
 
