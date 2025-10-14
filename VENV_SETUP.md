@@ -74,3 +74,11 @@
 >    - **Windows (Command Prompt):** `\.venv\Scripts\activate`
 >    - **macOS/Linux (zsh/bash):** `source .venv/bin/activate`
 > 3. 윈도우 사용자는 터미널 기본 프로필이 `Command Prompt`로 올바르게 설정되었는지 다시 한번 확인해 보세요.
+
+## 😊 추가 도움이 필요하다면
+
+기타 문의 사항이 있으실 경우 저자의 오픈 채팅에 문의해 주세요~!
+
+- https://open.kakao.com/o/g5rNEh7d
+
+  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/open_chat.jpg" width="150" alt="혼자 만들면서 공부하는 파이썬 오픈 채팅">

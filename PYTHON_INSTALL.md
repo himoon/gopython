@@ -68,12 +68,15 @@
 
   <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/win_install_6.png" alt="ipykernel 패키지 설치 안내" width="600"/>
 
+- ⚠️ 설치가 완료되면 키보드 `F1`을 눌러 명령 팔레트를 열고, `reload` 입력 후 `캐시 지우기 및 창 다시 로드` 메뉴를 클릭하여 VS Code를 다시 로드합니다. 몇몇 사례에서 이 단계를 거쳐야 대화형 창이 정상적으로 작동하는 것으로 확인되었습니다.
+
 > 💡 ipykernel은 Jupyter 노트북과 VS Code 대화형 창을 연결하는 데 필요한 핵심 패키지입니다.
 
 ## 7. 문제 해결이 안 되는 경우
 
 위 단계를 모두 수행했음에도 불구하고 문제가 계속 발생하는 경우:
 - 저자의 이메일로 문의
-- 오픈 채팅에 문의
+- 오픈 채팅에 문의 https://open.kakao.com/o/g5rNEh7d
 - 문제 상황의 스크린샷과 함께 구체적인 오류 메시지를 포함해 주세요
 
+  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/open_chat.jpg" width="150" alt="혼자 만들면서 공부하는 파이썬 오픈 채팅">
