@@ -109,3 +109,10 @@
 | **Chapter 14** | [ch_14](ch_14/) (구버전) | [ch_14_genai](ch_14_genai/) (최신버전) | [ch_14_genai](ch_14_genai/) ⭐ |
 
 > ⭐ 표시된 옵션을 우선적으로 사용하시기 바랍니다.
+
+## 😊 기타 문의 사항
+
+기타 문의 사항이 있으실 경우 저자의 오픈 채팅에 문의해 주세요.
+- https://open.kakao.com/o/g5rNEh7d
+
+  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/open_chat.jpg" width="150" alt="혼자 만들면서 공부하는 파이썬 오픈 채팅">
