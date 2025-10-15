@@ -1,7 +1,7 @@
 from pathlib import Path
 
 import streamlit as st
-from PIL.ImageFile import ImageFile  # 타입힌트 경로 수정
+from PIL import ImageFile
 
 from step_1_1 import OUT_DIR  # 이전에 작성한 모듈을 불러옵니다.
 from step_1_2 import upload_image
@@ -16,7 +16,7 @@ def init_page():
     init_session(dict(quiz=[], answ=[], audio=[], voice="en-US-Journey-F"))
 
 
-def set_quiz(img: ImageFile):  # 퀴즈 출제 위젯
+def set_quiz(img: ImageFile.ImageFile):  # 퀴즈 출제 위젯
     if img and not st.session_state["quiz"]:  # 'quiz' 세션값이 없으면 퀴즈 출제
         with st.spinner("문제를 출제중입니다...🤯"):
             quiz, answ = generate_quiz(img)  # 퀴즈 생성

@@ -1,6 +1,6 @@
 import streamlit as st
 from google.genai.chats import Chat
-from PIL.ImageFile import ImageFile  # 타입힌트 경로 수정
+from PIL import ImageFile
 
 from step_1_2 import get_chat, upload_image  # 이전에 작성한 모듈을 불러옵니다.
 
@@ -30,7 +30,7 @@ def show_messages():  # 메시지 기록 출력
             st.markdown(row["content"])
 
 
-def send_image(img: ImageFile):  # 이미지 전송
+def send_image(img: ImageFile.ImageFile):  # 이미지 전송
     chat: Chat = st.session_state["chat"]  # 챗 객체 가져오기
     if not chat.get_history():  # 대화 기록이 없으면 첫 번째 메시지 전송
         with st.spinner("이미지를 분석하는 중입니다..."):

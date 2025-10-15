@@ -6,7 +6,7 @@ from step_1_1 import IN_DIR, OUT_DIR  # 이전에 작성한 모듈을 불러옵�
 from step_2_1 import tts_client
 
 
-def synth_speech(text: str, voice: str, audio_encoding: str = None) -> bytes:
+def synth_speech(text: str, voice: str, audio_encoding: str | None = None) -> bytes:
     lang_code = "-".join(voice.split("-")[:2])  # 언어 코드(예: 'en-US', 'ko-KO')
     MP3, WAV = texttospeech.AudioEncoding.MP3, texttospeech.AudioEncoding.LINEAR16
     audio_type = MP3 if audio_encoding == "mp3" else WAV  # MP3 또는 WAV

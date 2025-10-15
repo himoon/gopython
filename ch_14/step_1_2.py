@@ -7,7 +7,7 @@ from PIL import Image, ImageFile
 from step_1_1 import OUT_DIR  # 이전에 작성한 모듈을 불러옵니다.
 
 
-def get_model(sys_prompt: str = None) -> genai.GenerativeModel:
+def get_model(sys_prompt: str | None = None) -> genai.GenerativeModel:
     GEMINI_KEY = "API_KEY"  # Gemini API 키 입력
     GEMINI_MODEL = "gemini-1.5-flash"  # Gemini 모델 입력
     genai.configure(api_key=GEMINI_KEY, transport="rest")  # API 키 설정
