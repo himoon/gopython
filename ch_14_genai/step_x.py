@@ -1,10 +1,24 @@
 import streamlit as st
+from google.cloud import texttospeech
 
 from step_1_2 import upload_image  # 이전에 작성한 모듈을 불러옵니다.
 from step_1_3 import clear_session
-from step_2_1 import list_voices
+from step_2_1 import tts_client
 from step_3_2 import init_page, set_quiz
 from step_3_3 import show_quiz
+
+
+def list_voices(lang_code: str | None = None) -> list[dict]:  # 보이스 목록 반환
+    client = tts_client()
+    resp = client.list_voices(language_code=lang_code)
+    voices = sorted(resp.voices, key=lambda voice: voice.name)
+    return [
+        dict(
+            name=vo.name,  # 보이스 이름
+            gender=texttospeech.SsmlVoiceGender(vo.ssml_gender).name,  # 성별
+        )
+        for vo in voices
+    ]
 
 
 def show_voice_selector():  # 보이스 선택 위젯
