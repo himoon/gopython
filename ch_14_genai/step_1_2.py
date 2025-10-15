@@ -8,10 +8,15 @@ from PIL import Image, ImageFile
 
 from step_1_1 import OUT_DIR  # 이전에 작성한 모듈을 불러옵니다.
 
+# 💡 genai 관련 패키지 업데이트로 클라이언트 객체 생성 코드를 get_chat() 함수 바깥으로 옮겼습니다 (2025.10.16).
+GEMINI_KEY = "API_KEY"  # Gemini API 키 입력
+client = genai.Client(api_key=GEMINI_KEY)  # 클라이언트 객체 생성
+
 
 def get_chat(sys_prompt: str | None = None) -> Chat:
-    GEMINI_KEY = "API_KEY"  # Gemini API 키 입력
-    client = genai.Client(api_key=GEMINI_KEY)  # 클라이언트 객체 생성
+    # ❌ genai 관련 패키지 업데이트로 아래 코드를 get_chat() 함수 바깥으로 옮겨야 합니다 (2025.10.16).
+    # GEMINI_KEY = "API_KEY"  # Gemini API 키 입력
+    # client = genai.Client(api_key=GEMINI_KEY)  # 클라이언트 객체 생성
     return client.chats.create(
         model="gemini-2.5-flash",  # Gemini 모델 입력
         config=types.GenerateContentConfig(system_instruction=sys_prompt),
@@ -31,7 +36,13 @@ def upload_image(on_change=None, args=None) -> ImageFile.ImageFile | None:
                 tmp_path = OUT_DIR / f"{Path(__file__).stem}.tmp"  # 임시 파일 경로
                 tmp_path.write_bytes(uploaded.getvalue())  # 업로드한 이미지 저장
                 img = Image.open(tmp_path)  # Image 객체 생성
-                st.image(img, use_container_width=True)  # 이미지 출력
+
+                # st.image(img, use_container_width=True)  # 이미지 출력
+
+                # 💡 use_container_width 매개변수가 width 매개변수로 대체될 예정입니다 (2025.10.16).
+                # 기존과 동일한 동작을 위해 width 매개변수에 "content" 값을 전달합니다.
+                # width 매개변수에 대한 설명은 'streamlit st.image' 검색어로 검색해 보세요.
+                st.image(img, width="content")  # 이미지 출력
                 return img
 
 
