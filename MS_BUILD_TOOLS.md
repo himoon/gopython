@@ -2,6 +2,8 @@
 
 윈도우 환경에서 최신 pandas 패키지 설치 시 C++ 빌드 도구가 필요하여 설치 오류가 발생할 수 있습니다. 이 경우, 아래 방법에 따라 문제를 해결할 수 있습니다.
 
+> 🚨 이 문서는 윈도우 환경만 해당됩니다. macOS, 리눅스 환경에서는 적용되지 않습니다.
+
 <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/build_tools_00.png" alt="패키지 빌드 에러" width="600"/>
 
 ## (방법 1) pip 등 패키지 설치 관련 업데이트
@@ -18,9 +20,11 @@ python -m pip install --upgrade pip setuptools wheel
 
     <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/build_tools_01.png" alt="C++ 빌드 도구 다운로드" width="600"/>
 
-2. 다운로드한 설치 파일을 실행하여 Visual Studio 설치 관리자를 엽니다. 설치 시 오른쪽 상단의 `MSBuild 도구`가 선택된 것을 확인한 후 `설치` 버튼을 클릭하여 설치하세요. 이후 다시 패키지 설치를 시도해보세요.
+2. 다운로드한 설치 파일을 실행하여 Visual Studio 설치 관리자를 엽니다. 설치 시 오른쪽 상단의 `MSBuild 도구`가 선택된 것을 확인한 후 `설치` 버튼을 클릭하여 설치하세요.
 
     <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/build_tools_02.png" alt="C++ 빌드 도구 설치" width="600"/>
+
+3. ⚠️ 이어서 컴퓨터를 재부팅한 후 다시 패키지 설치를 시도해보세요.
 
 ## (방법 3) pypi 웹 사이트에서 빌드된 배포판 설치
 
@@ -31,6 +35,14 @@ python -m pip install --upgrade pip setuptools wheel
 2. 자신의 파이썬 버전과 운영체제에 맞는 `.whl` 파일을 다운로드합니다. 예를 들어, Python 3.14, Windows 64비트 환경에서는 `pandas-2.x.x-cp314-cp314-win_amd64.whl` 파일을 선택합니다.
 
     <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/build_tools_03.png" alt="pandas whl 파일 다운로드" width="600"/>
+
+3. 다운로드한 `.whl` 파일을 작업 폴더에 복사한 후, VS Code 터미널에서 아래 명령어를 입력하여 설치합니다.
+
+```shell
+pip install pandas-2.x.x-cp314-cp314-win_amd64.whl
+```
+
+> ⚠️ 주의: 위 명령어에서 `pandas-2.x.x-cp314-cp314-win_amd64.whl` 부분은 다운로드한 파일의 실제 이름으로 변경해야 합니다. `pip install pandas` 까지만 입력한 후 `Tab` 키를 눌러 자동 완성 기능을 활용하면 편리합니다.
 
 ## 😊 추가 도움이 필요하다면
 
