@@ -16,7 +16,7 @@
 ## 🚨 (긴급) 대화형 창 커널 연결 문제, 최신 pandas 패키지 설치 오류 해결
 
 - [VS Code 업데이트로 인한 대화형 창 커널 연결 문제 해결 가이드](PYTHON_INSTALL.md)
-- [윈도우 환경에서 pandas 최신 버전 설치 오류 해결 가이드](MS_BUILD_TOOLS.md)
+- [윈도우 환경에서 pandas, streamlit 등 최신 패키지 설치 오류 해결 가이드](MS_BUILD_TOOLS.md)
 
 ## 🔧 Venv 파이썬 가상환경 설정 오류 발생 시 재설정 방법 안내
 
