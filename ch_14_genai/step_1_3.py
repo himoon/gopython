@@ -1,6 +1,6 @@
 import streamlit as st
 from google.genai.chats import Chat
-from PIL import ImageFile
+from PIL.ImageFile import ImageFile  # 타입힌트 경로 수정
 
 from step_1_2 import get_chat, upload_image  # 이전에 작성한 모듈을 불러옵니다.
 
