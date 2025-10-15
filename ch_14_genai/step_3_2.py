@@ -13,7 +13,7 @@ from step_3_1 import generate_quiz
 def init_page():
     st.set_page_config(layout="wide")
     st.title("🔊 만들면서 배우는 영어 받아쓰기 웹 앱")
-    init_session(dict(quiz=[], answ=[], audio=[], voice="en-US-Journey-F"))
+    init_session(dict(quiz=[], answ=[], audio=[], voice="en-US-Studio-O"))  # 💡 기본 보이스 변경 (2025.10.16)
 
 
 def set_quiz(img: ImageFile.ImageFile):  # 퀴즈 출제 위젯
