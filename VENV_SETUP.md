@@ -30,7 +30,7 @@
 
 
 ## 3. 파이썬 가상환경 설치
-이제 파이썬 가상환경을 설치할 준비가 되었습니다. 키보드 `F1` 키를 눌러 명령 팔레트를 열고, 아래 그림과 같이 파이썬 가상환경을 설치합니다.
+이제 파이썬 가상환경을 설치할 준비가 되었습니다. 키보드 `F1` 키를 눌러 명령 팔레트를 열고, 아래 그림과 같이 파이썬 가상환경을 설치합니다. 만약 이미 설치된 파이썬 가상환경이 있는 경우(`.venv` 등) VS Code 왼쪽의 탐색기에서 해당 폴더를 삭제하고 진행해 주세요.
 
 - 명령 팔레트에서 `env` 입력 후 `Python: 환경 만들기` 클릭
 
@@ -40,16 +40,27 @@
 
   <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/venv-05-1.png" alt="Venv 클릭" width="700"/>
 
+  > ⚠️ 만약 다음 그림과 같이 `빨리 만들기` 버튼이 보이는 경우 이를 클릭하지 말고, 그 아래에 있는 `venv` 옵션을 클릭하세요.
+
+  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/venv-05-3.png" alt="빨리 만들기 금지" width="700"/>
+
 - `삭제 및 다시 생성` 클릭(만약 이 옵션이 보이지 않는다면, 다음 단계로 넘어가세요)
 
   <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/venv-05-2.png" alt="삭제 및 다시 생성 클릭" width="700"/>
+
+- `PyPI 패키지 검색` 버튼이 보이는 경우 이를 클릭하지 말고, 그 아래에 있는 `패키지 설치 건너뛰기` 옵션을 클릭하세요.
+
+  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/venv-05-4.png" alt="패키지 설치 건너뛰기" width="700"/>
+
+  > ⚠️ 만약 `requirements.txt` 파일에서 패키지를 설치하라는 메시지가 나타나면, 무시하고 다음 단계를 진행하세요.
 
 - 설치할 파이썬 버전 클릭
 
   <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/venv-06.png" alt="설치할 파이썬 버전 클릭" width="700"/>
 
-> ⚠️ `requirements.txt` 파일에서 패키지를 설치하라는 메시지가 나타나면, 무시하고 다음 단계를 진행하세요.
+- 만약 `가상 환경 이름 입력` 창이 나타나는 경우 기본값인 `.venv`를 그대로 사용하려면 `Enter` 키를 누르세요. 다른 이름을 사용하려면 원하는 이름을 입력한 후 `Enter` 키를 누릅니다.
 
+  <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/venv-05-5.png" alt="삭제 및 다시 생성 클릭" width="700"/>
 
 ## 4. VS Code 새로고침
 키보드 `F1` 키를 눌러 명령 팔레트를 열고, 아래 그림과 같이 VS Code를 새로고침합니다.
