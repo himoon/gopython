@@ -12,7 +12,7 @@ from step_1_1 import OUT_DIR  # 이전에 작성한 모듈을 불러옵니다.
 OUT_3_1 = OUT_DIR / f"{Path(__file__).stem}.docx"
 
 
-def apply_font(arg: Run | ParagraphStyle, face: str = "Malgun Gothic", size_pt: int = None, is_bold: bool = None, rgb: str = None):
+def apply_font(arg: Run | ParagraphStyle, face: str = "Malgun Gothic", size_pt: int | None = None, is_bold: bool | None = None, rgb: str | None = None):
     if face is not None:
         arg.font.name = face  # 폰트 설정
         for prop in ["asciiTheme", "cstheme", "eastAsia", "eastAsiaTheme", "hAnsiTheme"]:
