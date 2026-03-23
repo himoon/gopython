@@ -14,7 +14,7 @@ OUT_3_3 = OUT_DIR / f"{Path(__file__).stem}.docx"
 
 
 def insert_indicators():
-    doc = Document(OUT_3_2)  # 워드 문서 불러오기
+    doc = Document(str(OUT_3_2))  # 워드 문서 불러오기
     r_head = doc.add_paragraph().add_run("1. 주요 금리 현황")  # 부제목 입력
     apply_font(r_head, size_pt=14, is_bold=True)  # 폰트 설정
     add_blank_paragraph(doc, size_pt=10)  # 10 포인트 크기의 빈 단락 삽입
@@ -53,7 +53,7 @@ def insert_indicators():
             p4.add_run().add_picture(img_path.as_posix(), Mm(30), Mm(8))  # 이미지 추가
 
     add_blank_paragraph(doc, size_pt=10)  # 10 포인트 크기의 빈 단락 삽입
-    doc.save(OUT_3_3)  # 워드 파일로 저장
+    doc.save(str(OUT_3_3))  # 워드 파일로 저장
 
 
 if __name__ == "__main__":

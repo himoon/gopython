@@ -16,7 +16,7 @@ OUT_3_4 = OUT_DIR / f"{Path(__file__).stem}.docx"
 
 
 def insert_deposit_info(n_rows: int = 10):
-    doc = Document(OUT_3_3)  # 워드 문서 불러오기
+    doc = Document(str(OUT_3_3))  # 워드 문서 불러오기
     r_head = doc.add_paragraph().add_run("2. 주요 정기예금 상품 및 금리")  # 부제목 입력
     apply_font(r_head, size_pt=14, is_bold=True)  # 폰트 설정
     add_blank_paragraph(doc, size_pt=2)  # 2 포인트 크기의 빈 단락 삽입
@@ -53,7 +53,7 @@ def insert_deposit_info(n_rows: int = 10):
             p_td.add_run(f"{se_row.iloc[idx]}")  # 내용 셀 입력
 
     add_blank_paragraph(doc, size_pt=10)  # 10 포인트 크기의 빈 단락 삽입
-    doc.save(OUT_3_4)  # 워드 파일로 저장
+    doc.save(str(OUT_3_4))  # 워드 파일로 저장
 
 
 if __name__ == "__main__":

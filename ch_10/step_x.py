@@ -12,7 +12,7 @@ OUT_X = OUT_DIR / f"{Path(__file__).stem}.docx"
 
 
 def insert_info():
-    doc = Document(OUT_3_4)  # 워드 문서 불러오기
+    doc = Document(str(OUT_3_4))  # 워드 문서 불러오기
     table = doc.add_table(rows=1, cols=1, style="Light Shading Accent 6")  # 표 추가
     table.alignment = WD_TABLE_ALIGNMENT.CENTER  # 표 가로 정렬
     table.allow_autofit = False  # 표 너비 자동 맞춤 해제
@@ -32,7 +32,7 @@ def insert_info():
     p3 = td.add_paragraph(style="List Bullet")  # 세 번째 단락 추가
     r3 = p3.add_run("정기예금 상품의 금리는 수시로 변경될 수 있습니다.")
     apply_font(r3, size_pt=9, is_bold=False)
-    doc.save(OUT_X)  # 워드 파일로 저장
+    doc.save(str(OUT_X))  # 워드 파일로 저장
 
 
 if __name__ == "__main__":
