@@ -8,7 +8,7 @@ from step_1 import OUT_DIR  # 이전에 작성한 모듈을 불러옵니다.
 OUT_2_1 = OUT_DIR / f"{Path(__file__).stem}.csv"
 
 
-def sido_sgg_to_csv(region: str = None):
+def sido_sgg_to_csv(region: str | None = None):
     DATAGO_KEY = "공공데이터포털 API 키"  # 공공데이터포털 API 키 입력
     datago = Datagokr(DATAGO_KEY)  # Datagokr 객체 생성
     resp = datago.lawd_code(region)  # 법정동 데이터 수집
