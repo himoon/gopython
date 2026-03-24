@@ -76,6 +76,14 @@
   - **`step_3_1.py`**: `st.dataframe()` → `st.dataframe(df.style.format())`로 변경
   - **`step_3_2.py`**: `column_config` 매개변수의 `format` 옵션에 `"localized"` 추가
 
+### Chapter 12: 미쉐린 가이드 지도
+- **네이버 지도 UI 변경**: 웹사이트 UI 업데이트로 인한 요소 선택자(locator) 변경
+- **수정된 파일**: [ch_12/step_1_3.py](ch_12/step_1_3.py)
+- **주요 변경사항**:
+  - `slow_mo=1000` → `slow_mo=2000`: 브라우저 동작 속도 조절로 안정성 향상
+  - 검색창 클릭: `get_by_label()` → `get_by_role("button", name="검색")`
+  - 키워드 입력: `get_by_label()` → `get_by_role("combobox", name="장소, 버스, 지하철, 주소 검색")`
+
 ### Chapter 13: 생성형 AI 기사 번역 앱
 - **모델 업데이트**: Gemma3 최신 버전 출시 (기존 Gemma2에서 업그레이드)
 - **권장 사용법**: 
