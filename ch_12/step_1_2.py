@@ -1,7 +1,7 @@
 from playwright.sync_api import Browser, Page, Playwright, sync_playwright
 
 
-def run_playwright(slow_mo: float = None) -> tuple[Playwright, Browser, Page]:
+def run_playwright(slow_mo: float | None = None) -> tuple[Playwright, Browser, Page]:
     play: Playwright = sync_playwright().start()  # Playwright 객체 생성
     browser: Browser = play.chromium.launch(  # Browser 객체 생성
         args=["--start-maximized"],  # 웹 브라우저 최대화
