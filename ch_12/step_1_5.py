@@ -10,7 +10,7 @@ from step_1_4 import parse_names
 OUT_1_5 = OUT_DIR / f"{Path(__file__).stem}.csv"
 
 
-def rotate_pages(page: Page) -> list[str]:
+def rotate_pages(page: Page) -> list[tuple[str, str]]:
     iframe = page.locator('iframe[title="Naver Place Search"]').content_frame  # 검색 결과 창
     # iframe = page.frame_locator('iframe[title="Naver Place Search"]') # 위와 동일한 코드
     prev_tag = iframe.get_by_role("button", name="이전페이지")  # "이전페이지" 태그
