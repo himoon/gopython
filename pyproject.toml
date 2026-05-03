@@ -1,3 +1,62 @@
+[project]
+name = "gopython"
+version = "1.0.0"
+description = "혼자 만들면서 공부하는 파이썬 예제 모음"
+readme = "README.md"
+requires-python = ">=3.14,<3.15"
+dependencies = [
+    "datakart",
+    "folium",
+    "geopandas",
+    "google-cloud-texttospeech",
+    "google-genai",
+    "ipykernel",
+    "ipywidgets",
+    "kaleido>=1,<2",
+    "matplotlib",
+    "nbformat",
+    "nltk",
+    "numpy",
+    "ollama",
+    "openpyxl",
+    "pandas",
+    "pillow",
+    "playwright",
+    "plotly<6",
+    "pygame",
+    "python-docx",
+    "qrcode==7.4.2",
+    "readchar",
+    "requests",
+    "seaborn",
+    "streamlit-folium",
+    "streamlit",
+    "tqdm",
+    "trafilatura",
+    "vobject",
+]
+
+[tool.uv]
+package = false
+
 [tool.isort]
 profile = "black"
-src_paths = ["ch_01","ch_02","ch_03","ch_04","ch_05","ch_06","ch_07","ch_08","ch_09","ch_10","ch_11","ch_12","ch_13","ch_14","ch_15"]
+src_paths = [
+    "ch_01",
+    "ch_02",
+    "ch_03",
+    "ch_04",
+    "ch_05",
+    "ch_05_paddleocr",
+    "ch_06",
+    "ch_07",
+    "ch_08",
+    "ch_09",
+    "ch_10",
+    "ch_11",
+    "ch_12",
+    "ch_13",
+    "ch_14",
+    "ch_14_genai",
+    "ch_15",
+]
