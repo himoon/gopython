@@ -19,7 +19,9 @@
     "uv": true
   },
   "files.exclude": {
-    "**/__pycache__": true
+    "**/__pycache__": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true
   },
   "jupyter.interactiveWindow.creationMode": "perFile",
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
