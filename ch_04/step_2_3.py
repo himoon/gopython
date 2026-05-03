@@ -28,14 +28,14 @@ url = vcard.add("URL")  # 홈페이지
 url.value = "https://www.hanbit.co.kr/"
 print(vcard.serialize())
 
-from pathlib import Path
+from pathlib import Path  # noqa: E402
 
-from step_1_1 import OUT_DIR
+from step_1_1 import OUT_DIR  # noqa: E402
 
 with open(OUT_DIR / f"{Path(__file__).stem}.vcf", "w", encoding="utf-8") as fp:
     fp.write(vcard.serialize())
 
-import qrcode
+import qrcode  # noqa: E402
 
 qr = qrcode.make(vcard.serialize())
 qr.save(OUT_DIR / f"{Path(__file__).stem}.png")

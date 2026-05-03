@@ -5,7 +5,7 @@ from step_1_1 import IMG_DIR  # 이전에 작성한 모듈을 불러옵니다.
 img = Image.open(IMG_DIR / "img_001.jpg")
 img
 
-from PIL import ImageDraw
+from PIL import ImageDraw  # noqa: E402
 
 draw = ImageDraw.Draw(img)
 draw.text(

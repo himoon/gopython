@@ -19,8 +19,8 @@ df_sort
 df_reindex = df_sort.reset_index()
 df_reindex
 
-from pathlib import Path
+from pathlib import Path  # noqa: E402
 
-from step_1 import OUT_DIR  # 이전에 작성한 모듈을 불러옵니다.
+from step_1 import OUT_DIR  # 이전에 작성한 모듈을 불러옵니다.  # noqa: E402
 
 df_reindex.to_excel(OUT_DIR / f"{Path(__file__).stem}.xlsx", index=False, sheet_name="분류별누적금액")

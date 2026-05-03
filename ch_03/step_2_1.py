@@ -10,7 +10,7 @@ img_resize = img.resize(SIZE)
 print(f"{img_resize.size=}")
 img_resize
 
-from PIL import ImageOps
+from PIL import ImageOps  # noqa: E402
 
 img_cont = ImageOps.contain(img, SIZE)
 print(f"{img_cont.size = }")

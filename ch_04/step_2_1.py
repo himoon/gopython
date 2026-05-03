@@ -14,7 +14,7 @@ vcf = "\n".join(data)  # 리스트를 하나의 문자열로 변경
 with open(OUT_DIR / f"{Path(__file__).stem}.vcf", "w", encoding="utf-8") as fp:
     fp.write(vcf)
 
-import qrcode
+import qrcode  # noqa: E402
 
 img = qrcode.make(vcf)
 img

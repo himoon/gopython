@@ -14,11 +14,11 @@ df_sum
 df_final = pd.concat([df_head, df_sum], ignore_index=True)
 df_final
 
-from pathlib import Path
+from pathlib import Path  # noqa: E402
 
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt  # noqa: E402
 
-from step_1 import OUT_DIR
+from step_1 import OUT_DIR  # noqa: E402
 
 values = df_final["누적금액"]
 
