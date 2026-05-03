@@ -3,7 +3,7 @@ name = "gopython"
 version = "1.0.0"
 description = "혼자 만들면서 공부하는 파이썬 예제 모음"
 readme = "README.md"
-requires-python = ">=3.14,<3.15"
+requires-python = ">=3.13,<3.15"
 dependencies = [
     "datakart",
     "deepl>=1.30.0",
