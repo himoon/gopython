@@ -54,9 +54,8 @@ markers = [
     "live_api: requires external APIs, credentials, or network access",
 ]
 
-[tool.isort]
-profile = "black"
-src_paths = [
+[tool.ruff]
+src = [
     "ch_01",
     "ch_02",
     "ch_03",
