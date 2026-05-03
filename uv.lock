@@ -642,6 +642,11 @@ dependencies = [
     { name = "vobject" },
 ]
 
+[package.dev-dependencies]
+dev = [
+    { name = "pytest" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "datakart" },
@@ -675,6 +680,9 @@ requires-dist = [
     { name = "trafilatura" },
     { name = "vobject" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pytest", specifier = ">=8.3" }]
 
 [[package]]
 name = "greenlet"
