@@ -20,6 +20,7 @@
   "jupyter.interactiveWindow.creationMode": "perFile",
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
+  "python.analysis.typeCheckingMode": "off",
   "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "workbench.editor.useModal": "off"
 }
