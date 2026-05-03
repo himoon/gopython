@@ -13,16 +13,31 @@
 - [알라딘](http://aladin.kr/p/lzsPq)
 - [한빛미디어](https://www.hanbit.co.kr/store/books/look.php?p_code=B5580711889)
 
-## 🚨 (긴급) 대화형 창 커널 연결 문제, 최신 pandas 패키지 설치 오류 해결
+## 🚨 실습 중 자주 발생하는 문제 해결 안내
 
-- [VS Code 업데이트로 인한 대화형 창 커널 연결 문제 해결 가이드](PYTHON_INSTALL.md)
-- [윈도우 환경에서 pandas, streamlit 등 최신 패키지 설치 오류 해결 가이드](MS_BUILD_TOOLS.md)
+### 갑자기 안 보이던 오류/경고가 쏟아지는 경우
+- **문제**: 예제 코드는 정상 실행되는데도 편집기에서 빨간 밑줄이나 경고 메시지가 표시되는 문제
+- **원인**: 파이썬 관련 확장 프로그램의 Type Checking Mode가 `basic` 또는 `strict`로 설정되어 코드 타입을 더 엄격하게 점검함
+- **해결법**: VS Code 설정에서 `Python › Analysis: Type Checking Mode`를 `off`로 변경
+- **📋 자세한 설정 방법**: [docs/type-checking-mode.md](docs/type-checking-mode.md) 파일 참고
 
-## 🔧 Venv 파이썬 가상환경 설정 오류 발생 시 재설정 방법 안내
-
-- **문제 상황**: 가상환경 생성 실패, 패키지 설치 오류, 인터프리터 인식 불가 등
-- **해결 방법**: 기존 가상환경 완전 삭제 후 재설정
+### VS Code 파이썬 가상환경 재설정 안내
+- **문제**: 가상환경 생성 실패, 패키지 설치 오류, 인터프리터 인식 불가, `(.venv)` 표시 누락 등의 문제
+- **원인**: 기존 가상환경 꼬임, 터미널 프로필 설정 문제, 캐시 반영 지연 등으로 VS Code가 가상환경을 정상 인식하지 못함
+- **해결법**: 실행 중인 터미널을 종료한 뒤 `Python: 환경 만들기`로 `.venv`를 다시 생성하고, VS Code를 새로고침하거나 다시 실행
 - **📋 자세한 재설정 방법**: [VENV_SETUP.md](VENV_SETUP.md) 파일 참고
+
+### VS Code 대화형 창 커널 연결 문제 안내
+- **문제**: 대화형 창에서 `.venv` 커널이 표시되어도 Python 커널에 연결되지 않는 문제
+- **원인**: 관리자 권한으로 설치된 Python이 시스템 디렉토리에 있어, 일반 권한으로 실행되는 VS Code가 해당 경로에 정상 접근하지 못함
+- **해결법**: 기존 Python을 삭제한 뒤 일반 사용자 계정용으로 다시 설치하고, VS Code 재실행 후 가상환경을 다시 설정
+- **📋 자세한 해결 방법**: [PYTHON_INSTALL.md](PYTHON_INSTALL.md) 파일 참고
+
+### 최신 pandas, streamlit 등 패키지 설치 오류 안내
+- **문제**: pandas, streamlit 등 최신 패키지 설치 중 빌드 오류가 발생하는 문제
+- **원인**: 윈도우 환경에서 일부 패키지 설치 시 Microsoft C++ 빌드 도구가 필요하거나, Python 버전 호환성 문제로 설치가 실패할 수 있음
+- **해결법**: 먼저 `pip`, `setuptools`, `wheel`을 업데이트하고, 필요 시 Microsoft C++ 빌드 도구를 설치하거나 PyPI에서 미리 빌드된 `.whl` 파일을 사용
+- **📋 자세한 해결 방법**: [MS_BUILD_TOOLS.md](MS_BUILD_TOOLS.md) 파일 참고
 
 ## ⚠️ 중요한 코드 업데이트 안내
 
