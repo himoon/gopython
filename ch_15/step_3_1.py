@@ -5,7 +5,7 @@ from step_1_1 import IN_DIR  # 이전에 작성한 모듈을 불러옵니다.
 
 def init_pygame(scr_size: tuple[int, int], font_size: int = 30):
     pygame.init()  # pygame 패키지 초기화
-    pygame.display.set_caption(f"슬라이딩 퍼즐")  # 게임 제목
+    pygame.display.set_caption("슬라이딩 퍼즐")  # 게임 제목
     screen = pygame.display.set_mode(scr_size)  # 화면 크기
     font = pygame.font.Font(IN_DIR / "Pretendard-Bold.ttf", size=font_size)
     clock = pygame.time.Clock()  # 화면 업데이트 주기를 관리하는 Clock 객체 생성

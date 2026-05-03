@@ -39,5 +39,5 @@ if __name__ == "__main__":
         clear_terminal_then_draw_board(board)
 
         if is_board_solved(board):  # 퍼즐 완성 여부 확인
-            print(f"🎉 슬라이딩 퍼즐 완성! 축하합니다! 🎉")
+            print("🎉 슬라이딩 퍼즐 완성! 축하합니다! 🎉")
             break
