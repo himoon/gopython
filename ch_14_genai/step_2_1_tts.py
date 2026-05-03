@@ -9,7 +9,7 @@ client = texttospeech.TextToSpeechClient(credentials=cred)  # 클라이언트 �
 client.list_voices()  # TTS 지원 언어 목록
 
 
-from pathlib import Path
+from pathlib import Path  # noqa: E402
 
 text = IN_DIR / "billboard.txt"  # 텍스트 파일 경로
 lang_code = "en-GB"  # 언어 코드
