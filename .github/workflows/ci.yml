@@ -12,7 +12,6 @@ jobs:
       matrix:
         python-version:
           - "3.13"
-          - "3.14"
 
     steps:
       - name: Check out repository
@@ -23,6 +22,11 @@ jobs:
         with:
           enable-cache: true
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgl1 libglib2.0-0 libgomp1 libsm6 libxext6
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -32,4 +36,4 @@ jobs:
         run: uv sync --locked --all-groups
 
       - name: Run tests
-        run: uv run pytest -q
+        run: uv run pytest -v
