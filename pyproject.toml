@@ -6,6 +6,7 @@ readme = "README.md"
 requires-python = ">=3.14,<3.15"
 dependencies = [
     "datakart",
+    "deepl>=1.30.0",
     "folium",
     "geopandas",
     "google-cloud-texttospeech",
@@ -19,6 +20,7 @@ dependencies = [
     "numpy",
     "ollama",
     "openpyxl",
+    "paddleocr>=3.4.1",
     "pandas",
     "pillow",
     "playwright",
