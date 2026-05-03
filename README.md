@@ -25,19 +25,19 @@
 - **문제**: 가상환경 생성 실패, 패키지 설치 오류, 인터프리터 인식 불가, `(.venv)` 표시 누락 등의 문제
 - **원인**: 기존 가상환경 꼬임, 터미널 프로필 설정 문제, 캐시 반영 지연 등으로 VS Code가 가상환경을 정상 인식하지 못함
 - **해결법**: 실행 중인 터미널을 종료한 뒤 `Python: 환경 만들기`로 `.venv`를 다시 생성하고, VS Code를 새로고침하거나 다시 실행
-- **📋 자세한 재설정 방법**: [VENV_SETUP.md](VENV_SETUP.md) 파일 참고
+- **📋 자세한 재설정 방법**: [docs/venv-setup.md](docs/venv-setup.md) 파일 참고
 
 ### VS Code 대화형 창 커널 연결 문제 안내
 - **문제**: 대화형 창에서 `.venv` 커널이 표시되어도 Python 커널에 연결되지 않는 문제
 - **원인**: 관리자 권한으로 설치된 Python이 시스템 디렉토리에 있어, 일반 권한으로 실행되는 VS Code가 해당 경로에 정상 접근하지 못함
 - **해결법**: 기존 Python을 삭제한 뒤 일반 사용자 계정용으로 다시 설치하고, VS Code 재실행 후 가상환경을 다시 설정
-- **📋 자세한 해결 방법**: [PYTHON_INSTALL.md](PYTHON_INSTALL.md) 파일 참고
+- **📋 자세한 해결 방법**: [docs/python-install.md](docs/python-install.md) 파일 참고
 
 ### 최신 pandas, streamlit 등 패키지 설치 오류 안내
 - **문제**: pandas, streamlit 등 최신 패키지 설치 중 빌드 오류가 발생하는 문제
 - **원인**: 윈도우 환경에서 일부 패키지 설치 시 Microsoft C++ 빌드 도구가 필요하거나, Python 버전 호환성 문제로 설치가 실패할 수 있음
 - **해결법**: 먼저 `pip`, `setuptools`, `wheel`을 업데이트하고, 필요 시 Microsoft C++ 빌드 도구를 설치하거나 PyPI에서 미리 빌드된 `.whl` 파일을 사용
-- **📋 자세한 해결 방법**: [MS_BUILD_TOOLS.md](MS_BUILD_TOOLS.md) 파일 참고
+- **📋 자세한 해결 방법**: [docs/ms-build-tools.md](docs/ms-build-tools.md) 파일 참고
 
 ## ⚠️ 중요한 코드 업데이트 안내
 
@@ -47,7 +47,7 @@
 - **문제**: Inspector 실행 시 locator 음영처리가 안 되거나, 녹화된 코드가 JavaScript로 생성되는 문제
 - **원인**: 현재 버전에서는 Python 환경임에도 Node.js가 기본값으로 설정되는 버그
 - **해결법**: Inspector 창 우측 상단의 **'Target' 메뉴** 클릭 → Python > **'Pytest'** 또는 **'Library'** 선택
-- **📋 자세한 설정 방법**: [INSPECTOR_TARGET.md](INSPECTOR_TARGET.md) 파일 참고
+- **📋 자세한 설정 방법**: [docs/inspector-target.md](docs/inspector-target.md) 파일 참고
 
 ### Chapter 1: 폴더 크기 측정 프로그램
 - **성능 최적화 필수**: [step_2_3.py](ch_01/step_2_3.py) 실행 시 홈 디렉토리의 모든 폴더를 추출하므로 사전 작업이 필요합니다

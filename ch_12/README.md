@@ -49,7 +49,7 @@ Playwright Inspector 사용 시 다음 설정을 확인하세요:
 - **문제**: Inspector 실행 시 locator 음영처리가 안 되거나, 코드가 JavaScript로 생성되는 문제
 - **해결**: Inspector 창 우측 상단의 **'Target' 메뉴**에서 Python > **'Pytest'** 또는 **'Library'** 선택
 
-> 📋 **자세한 설정 방법은 [INSPECTOR_TARGET.md](../INSPECTOR_TARGET.md) 파일을 참고하세요!**
+> 📋 **자세한 설정 방법은 [docs/inspector-target.md](../docs/inspector-target.md) 파일을 참고하세요!**
 
 ## 🚀 실습 단계별 가이드
 *   **[step_1_1.py](step_1_1.py)**: 실습에 필요한 `input`, `output` 폴더를 생성하여 기본 작업 환경을 구성합니다.
