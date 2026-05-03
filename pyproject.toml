@@ -25,6 +25,7 @@ dependencies = [
     "plotly<6",
     "pygame",
     "python-docx",
+    "python-dotenv>=1.2.2",
     "qrcode==7.4.2",
     "readchar",
     "requests",
