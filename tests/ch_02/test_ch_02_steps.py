@@ -2,12 +2,28 @@ import importlib
 import sys
 from pathlib import Path
 from unittest.mock import MagicMock, patch
+import pytest
 
 import pandas as pd
 
 # ch_02 폴더를 sys.path에 추가하여 step_*.py 내부의 모듈 임포트가 작동하도록 설정
 CH_02_DIR = Path(__file__).parent.parent.parent / "ch_02"
-sys.path.insert(0, str(CH_02_DIR))
+
+
+@pytest.fixture(autouse=True)
+def setup_module_path():
+    """
+    테스트 실행 전/후로 sys.path와 sys.modules를 초기화하는 픽스처입니다.
+    다른 챕터(예: ch_01)의 동일한 이름의 파일(step_*)이 메모리에 남아있을 경우
+    엉뚱한 파일이 import되는 모듈 충돌(ImportError 등)을 방지합니다.
+    """
+    sys.path.insert(0, str(CH_02_DIR))
+    for key in list(sys.modules.keys()):
+        if key.startswith("step_"):
+            del sys.modules[key]
+    yield
+    if str(CH_02_DIR) in sys.path:
+        sys.path.remove(str(CH_02_DIR))
 
 
 def test_step_1_mkdir(tmp_path, monkeypatch):

@@ -2,20 +2,32 @@ import importlib
 import sys
 from pathlib import Path
 from unittest.mock import MagicMock, patch
+import pytest
 
 # ch_01 폴더를 sys.path에 추가하여 step_*.py 내부의 모듈 임포트가 작동하도록 설정
 CH_01_DIR = Path(__file__).parent.parent.parent / "ch_01"
-sys.path.insert(0, str(CH_01_DIR))
 
-import step_2_1  # noqa: E402
-import step_2_3  # noqa: E402
-import step_2_4  # noqa: E402
-import step_3_1  # noqa: E402
-from step_2_2 import get_total_filesize  # noqa: E402
+
+@pytest.fixture(autouse=True)
+def setup_module_path():
+    """
+    테스트 실행 전/후로 sys.path와 sys.modules를 초기화하는 픽스처입니다.
+    다른 챕터(예: ch_02)의 동일한 이름의 파일(step_*)이 메모리에 남아있을 경우
+    엉뚱한 파일이 import되는 모듈 충돌(ImportError 등)을 방지합니다.
+    """
+    sys.path.insert(0, str(CH_01_DIR))
+    for key in list(sys.modules.keys()):
+        if key.startswith("step_"):
+            del sys.modules[key]
+    yield
+    if str(CH_01_DIR) in sys.path:
+        sys.path.remove(str(CH_01_DIR))
 
 
 def test_step_2_2_get_total_filesize(tmp_path):
     """step_2_2.py: get_total_filesize 테스트"""
+    from step_2_2 import get_total_filesize
+
     # 임의의 크기를 가지는 더미 파일 생성
     file1 = tmp_path / "test1.txt"
     file1.write_text("a" * 10)  # 10 bytes
@@ -39,6 +51,8 @@ def test_step_2_2_get_total_filesize(tmp_path):
 
 def test_step_2_3_dump_and_load_dirnames(monkeypatch, tmp_path):
     """step_2_3.py: dump_dirnames, load_dirnames 테스트"""
+    import step_2_3
+
     out_file = tmp_path / "step_2_3.json"
     monkeypatch.setattr(step_2_3, "OUT_2_3", out_file)
     
@@ -63,6 +77,8 @@ def test_step_2_3_dump_and_load_dirnames(monkeypatch, tmp_path):
 
 def test_step_2_4_dump_and_load_filesize(monkeypatch, tmp_path):
     """step_2_4.py: dump_filesize_from_dirnames, load_filesize_per_dir 테스트"""
+    import step_2_4
+
     out_file = tmp_path / "step_2_4.json"
     monkeypatch.setattr(step_2_4, "OUT_2_4", out_file)
     
@@ -95,6 +111,8 @@ def test_step_2_4_dump_and_load_filesize(monkeypatch, tmp_path):
 
 def test_step_3_1_dump_and_load_plot_data(monkeypatch, tmp_path):
     """step_3_1.py: dump_plot_data, load_plot_data 테스트"""
+    import step_3_1
+
     out_file = tmp_path / "step_3_1.json"
     monkeypatch.setattr(step_3_1, "OUT_3_1", out_file)
     
@@ -123,7 +141,9 @@ def test_step_3_1_dump_and_load_plot_data(monkeypatch, tmp_path):
 @patch("matplotlib.figure.Figure.savefig")
 @patch("matplotlib.pyplot.subplots")
 def test_step_3_2_and_3_3_plot_generation(mock_subplots, mock_savefig, monkeypatch, tmp_path):
-    """step_3_2.py, step_3_3.py: 모듈 임포트 시 그래프 생성 로직 검증"""
+    """step_3_2.py, step_3_3.py: 모듈 임포 시 그래프 생성 로직 검증"""
+    import step_2_1
+    import step_3_1
     
     # load_plot_data 모킹 (step_3_2, step_3_3 모듈이 실행될 때 사용할 더미 데이터 반환)
     mock_plot_data = {
@@ -155,3 +175,4 @@ def test_step_3_2_and_3_3_plot_generation(mock_subplots, mock_savefig, monkeypat
     
     mock_subplots.assert_called()
     mock_fig.savefig.assert_called_with(tmp_path / "step_3_3.png")
+
