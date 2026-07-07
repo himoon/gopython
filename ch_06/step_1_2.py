@@ -22,7 +22,13 @@ def run_playwright(slow_mo: float = None) -> tuple[Playwright, Browser, Page]:
 
     # 새 페이지(탭)가 열리기를 기다리는 컨텍스트 블록 시작
     with context.expect_page() as new_page_info:
-        main_page.get_by_role("link", name="스토어", exact=True).click(delay=1000)  # 2. 스토어 버튼 클릭
+        # ⚠️ 코드 업데이트 안내 (2026.07.07)
+        # 네이버 메인 페이지에서 네이버플러스 스토어로 이동하는 버튼 이름이 변경되었습니다.
+        # 기존 방법:
+        # main_page.get_by_role("link", name="스토어", exact=True).click(delay=1000)  # 2. 스토어 버튼 클릭
+
+        # 💡 해결책: 네이버 메인 페이지에서 '쇼핑' 버튼을 클릭해 네이버플러스 스토어로 이동
+        main_page.get_by_role("link", name="쇼핑", exact=True).click(delay=1000)  # 2. 쇼핑 버튼 클릭
 
     page = new_page_info.value  # with 블록이 끝나면 page 변수에 새 탭(네이버플러스 스토어)의 Page 객체가 저장됩니다.
     page.wait_for_load_state()  # 페이지 로딩이 완료될 때까지 기다립니다.
