@@ -1,4 +1,4 @@
-# VS Code Python Type Checking Mode 설정 안내
+# VS Code 화면에 갑자기 오류/경고가 쏟아지는 경우
 
 <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/cover_1st.png" width="150" alt="혼자 만들면서 공부하는 파이썬 표지">
 
