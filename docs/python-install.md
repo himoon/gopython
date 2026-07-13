@@ -1,4 +1,4 @@
-# VS Code 업데이트로 인한 대화형 창 커널 연결 문제 해결
+# VS Code 업데이트에 따른 대화형 창 커널 연결 문제 해결
 
 <img src="https://raw.githubusercontent.com/himoon/gopython/refs/heads/main/images/cover_1st.png" width="150" alt="혼자 만들면서 공부하는 파이썬 표지">
 
