@@ -34,27 +34,33 @@
 
 ## 🚨 실습 중 자주 발생하는 문제 해결 안내
 
-### 갑자기 안 보이던 오류/경고가 쏟아지는 경우
-- **증상**: 예제 코드는 정상 실행되는데도 편집기에서 빨간 밑줄이나 경고 메시지가 표시됨
-- **원인**: 파이썬 관련 확장 프로그램의 Type Checking Mode가 `basic` 또는 `strict`로 설정되어 코드 타입을 더 엄격하게 점검함
-- **해결**: VS Code 설정에서 `Python › Analysis: Type Checking Mode`를 `off`로 변경
-- **참고 문서**: [docs/type-checking-mode.md](docs/type-checking-mode.md)
-
-### VS Code 파이썬 가상환경 재설정
+### VS Code 파이썬 가상환경 설정
 - **증상**: 가상환경 생성 실패, 패키지 설치 오류, 인터프리터 인식 불가, `(.venv)` 표시 누락 등
-- **원인**: 기존 가상환경 꼬임, 터미널 프로필 설정 문제, 캐시 반영 지연 등으로 VS Code가 가상환경을 정상 인식하지 못함
 - **해결**: 실행 중인 터미널을 종료한 뒤 `Python: 환경 만들기`로 `.venv`를 다시 생성하고, VS Code를 새로고침하거나 다시 실행
 - **참고 문서**: [docs/venv-setup.md](docs/venv-setup.md)
 
-### VS Code 대화형 창 커널 연결 문제
+### VS Code 터미널로 파이썬 패키지 설치하기
+- **증상**: 챕터 실습에 필요한 pandas, streamlit 등 외부 패키지를 설치하는 방법을 모르거나, 실행 시 `ModuleNotFoundError`가 발생함
+- **해결**: 가상환경을 먼저 설정한 뒤, VS Code 터미널에서 `pip install 패키지명` 명령으로 설치
+- **참고 문서**: [docs/pip_install.md](docs/pip_install.md)
+
+### VS Code 대화형 창(Interactive Window) 설정 안내
+- **증상**: `Shift + Enter`로 코드를 실행해도 대화형 창이 열리지 않거나, 파일마다 창이 따로 생성되지 않음
+- **해결**: VS Code 설정에서 `Execute Selection`을 켜고, `Creation Mode`를 `perFile`로 변경
+- **참고 문서**: [docs/jupyter_shortcut.md](docs/jupyter_shortcut.md)
+
+### VS Code 화면에 갑자기 오류/경고가 쏟아지는 경우
+- **증상**: 예제 코드는 정상 실행되는데도 편집기에서 빨간 밑줄이나 경고 메시지가 표시됨
+- **해결**: VS Code 설정에서 `Python › Analysis: Type Checking Mode`를 `off`로 변경
+- **참고 문서**: [docs/type-checking-mode.md](docs/type-checking-mode.md)
+
+### VS Code 업데이트에 따른 대화형 창 커널 연결 문제 해결
 - **증상**: 대화형 창에서 `.venv` 커널이 표시되어도 Python 커널에 연결되지 않음
-- **원인**: 관리자 권한으로 설치된 Python이 시스템 디렉토리에 있어, 일반 권한으로 실행되는 VS Code가 해당 경로에 정상 접근하지 못함
 - **해결**: 기존 Python을 삭제한 뒤 일반 사용자 계정용으로 다시 설치하고, VS Code 재실행 후 가상환경을 다시 설정
 - **참고 문서**: [docs/python-install.md](docs/python-install.md)
 
-### 최신 pandas, streamlit 등 패키지 설치 오류
+### 파이썬 새 버전 출시 직후 패키지 설치 오류 해결 (윈도우 환경)
 - **증상**: pandas, streamlit 등 최신 패키지 설치 중 빌드 오류가 발생
-- **원인**: 윈도우 환경에서 일부 패키지 설치 시 Microsoft C++ 빌드 도구가 필요하거나, Python 버전 호환성 문제로 설치가 실패할 수 있음
 - **해결**: 먼저 `pip`, `setuptools`, `wheel`을 업데이트하고, 필요 시 Microsoft C++ 빌드 도구를 설치하거나 PyPI에서 미리 빌드된 `.whl` 파일을 사용
 - **참고 문서**: [docs/ms-build-tools.md](docs/ms-build-tools.md)
 
